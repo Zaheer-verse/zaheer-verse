@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaheer-verse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../titlog.jpg.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="splash">
+    <h1>Welcome to Zaheer-verse!</h1>
+  </div>
+
+  <header>
+    <nav>
+      <h2 class="logo">Zaheer-verse</h2>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero-shell" data-reveal>
+      <div class="hero-main">
+        <p class="eyebrow">Zaheer-verse Portfolio</p>
+        <h1 class="glow-text">Zaheer-verse</h1>
+        <p class="hero-lead">Computer Science Student | Future Innovator | IoT Enthusiast | Web-Developer |</p>
+
+        <div class="intro-line">
+          <span>Hi, I&rsquo;m Zaheer</span>
+          <span id="dynamic-text"></span>
+        </div>
+
+        <p class="tagline">Designing smart automation, Crafting Intelligent & Connected Solutions.</p>
+        <div class="hero-buttons">
+          <a href="../resume.html" class="btn" target="_blank">Resume</a>
+          <a href="#contact" class="btn btn-accent">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="portrait-wrap">
+          <img src="../titlog.jpg.png" alt="Zaheer-verse">
+        </div>
+        <div class="hero-highlights">
+          <article class="mini-card">
+            <h3>Core Focus</h3>
+            <p>Smart Automation & Connected Solutions</p>
+          </article>
+          <article class="mini-card">
+            <h3>Build Style</h3>
+            <p>Clear UX, practical systems, reliable execution</p>
+          </article>
+          <article class="mini-card">
+            <h3>Open For</h3>
+            <p>Mentorship, collaboration, and real project work</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section" data-reveal>
+      <div class="about-container">
+        <div class="about-live">
+          <video autoplay muted loop class="live-wallpaper">
+            <source src="../aboutvid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="about-content">
+          <div class="about-profile">
+            <img src="../prof.jpg" alt="Zaheer Profile">
+          </div>
+
+          <h2 class="section-title">About Me</h2>
+          <p class="about-intro">
+            Building easy-to-use websites and apps from your ideas.
+            I focus on making everything clear and simple for users.
+          </p>
+          <ul class="about-details">
+            <li><strong>Name:</strong> <span class="value">Zaheer Yousaf</span></li>
+            <li><strong>Location:</strong> <span class="value">Daska, Sialkot, Pakistan</span></li>
+            <li><strong>Specialization:</strong> <span class="value">C / C++ / HTML / CSS / Content Writing</span></li>
+            <li><strong>Branding:</strong> <span class="value">Zaheer-verse</span></li>
+            <li><strong>Passions:</strong> <span class="value">Smart Automation, Connected Solutions</span></li>
+            <li><strong>Mentorship:</strong> <span class="value">Always ready to guide & share knowledge</span></li>
+            <li><strong>Email:</strong> <span class="value">zaheery470@gmail.com</span></li>
+            <li><strong>Phone:</strong> <span class="value">+92 333 5398292</span></li>
+            <li><strong>Education:</strong> <span class="value">BS Computer Science (in progress) &mdash; University of Sialkot</span></li>
+            <li><strong>Projects:</strong> <span class="value">Eye-Blink Smart Home</span></li>
+            <li><strong>Interests:</strong> <span class="value">IoT, Web Development, Coding, Working with you</span></li>
+            <li><strong>Availability:</strong> <span class="value">Open to mentorship & collaboration</span></li>
+            <li><strong>Languages:</strong> <span class="value">English, Urdu, Punjabi</span></li>
+            <li><strong>Portfolio:</strong> <span class="value">zaheer-verse (personal)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section" aria-labelledby="skills-title" data-reveal>
+      <div class="section-inner">
+        <h3 id="skills-title" class="section-title">Skills</h3>
+        <p class="section-sub">Concise technical & soft skills I use to build real solutions.</p>
+
+        <div class="skills-controls" role="tablist" aria-label="Filter skills by category">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="programming" role="tab">Programming</button>
+          <button class="chip" data-filter="iot" role="tab">IoT / Embedded</button>
+          <button class="chip" data-filter="research" role="tab">Research</button>
+          <button class="chip" data-filter="projects" role="tab">Projects</button>
+          <button class="chip" data-filter="tools" role="tab">Tools</button>
+          <button class="chip" data-filter="soft" role="tab">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card" data-cat="programming" tabindex="0" aria-labelledby="s-cpp">
+            <h4 id="s-cpp">C / C++</h4>
+            <div class="skill-note">OOP &middot; DS &middot; Problem Solving</div>
+          </article>
+
+          <article class="skill-card" data-cat="programming" tabindex="0" aria-labelledby="s-python">
+            <h4 id="s-python">Python</h4>
+            <div class="skill-note">Automation &middot; IoT &middot; ML basics</div>
+          </article>
+
+          <article class="skill-card" data-cat="programming" tabindex="0" aria-labelledby="s-asm">
+            <h4 id="s-asm">Assembly (EMU8086)</h4>
+            <div class="skill-note">Low-level systems</div>
+          </article>
+
+          <article class="skill-card" data-cat="programming" tabindex="0" aria-labelledby="s-web">
+            <h4 id="s-web">Web Development</h4>
+            <div class="skill-note">HTML &middot; CSS &middot; JavaScript &middot; Responsive</div>
+          </article>
+
+          <article class="skill-card" data-cat="iot" tabindex="0" aria-labelledby="s-arduino">
+            <h4 id="s-arduino">Arduino & Microcontrollers</h4>
+            <div class="skill-note">Firmware & prototyping</div>
+          </article>
+
+          <article class="skill-card" data-cat="iot" tabindex="0" aria-labelledby="s-sensors">
+            <h4 id="s-sensors">Sensor Integration</h4>
+            <div class="skill-note">IR &middot; Relay &middot; Buzzer &middot; Wireless</div>
+          </article>
+
+          <article class="skill-card" data-cat="iot" tabindex="0" aria-labelledby="s-platforms">
+            <h4 id="s-platforms">IoT Platforms</h4>
+            <div class="skill-note">Blynk &middot; Cloud &middot; Smart Home</div>
+          </article>
+
+          <article class="skill-card" data-cat="iot" tabindex="0" aria-labelledby="s-wearable">
+            <h4 id="s-wearable">Wearables & Gestures</h4>
+            <div class="skill-note">Wearable sensors &middot; Gesture control</div>
+          </article>
+
+          <article class="skill-card" data-cat="research" tabindex="0" aria-labelledby="s-litrev">
+            <h4 id="s-litrev">Literature & Writing</h4>
+            <div class="skill-note">IEEE style &middot; LaTeX</div>
+          </article>
+
+          <article class="skill-card" data-cat="research" tabindex="0" aria-labelledby="s-docs">
+            <h4 id="s-docs">Project Docs</h4>
+            <div class="skill-note">Technical reports &middot; Urdu & English</div>
+          </article>
+
+          <article class="skill-card" data-cat="research" tabindex="0" aria-labelledby="s-algo">
+            <h4 id="s-algo">Problem Analysis</h4>
+            <div class="skill-note">Algorithms & design</div>
+          </article>
+
+          <article class="skill-card" data-cat="research" tabindex="0" aria-labelledby="s-team">
+            <h4 id="s-team">Team Work</h4>
+            <div class="skill-note">Collaboration & management</div>
+          </article>
+
+          <article class="skill-card" data-cat="projects" tabindex="0" aria-labelledby="s-project1">
+            <h4 id="s-project1">Eye-Blink Smart Home</h4>
+            <div class="skill-note">Smart home automation</div>
+          </article>
+
+          <article class="skill-card" data-cat="projects" tabindex="0" aria-labelledby="s-project2">
+            <h4 id="s-project2">EV Energy Harvesting</h4>
+            <div class="skill-note">Wireless charging ideas</div>
+          </article>
+
+          <article class="skill-card" data-cat="tools" tabindex="0" aria-labelledby="s-git">
+            <h4 id="s-git">Git & GitHub</h4>
+            <div class="skill-note">Version control</div>
+          </article>
+
+          <article class="skill-card" data-cat="tools" tabindex="0" aria-labelledby="s-overleaf">
+            <h4 id="s-overleaf">Overleaf / LaTeX</h4>
+            <div class="skill-note">Research & papers</div>
+          </article>
+
+          <article class="skill-card" data-cat="tools" tabindex="0" aria-labelledby="s-office">
+            <h4 id="s-office">MS Office</h4>
+            <div class="skill-note">Word &middot; Excel &middot; PowerPoint</div>
+          </article>
+
+          <article class="skill-card" data-cat="soft" tabindex="0" aria-labelledby="s-lead">
+            <h4 id="s-lead">Leadership</h4>
+            <div class="skill-note">Team management</div>
+          </article>
+
+          <article class="skill-card" data-cat="soft" tabindex="0" aria-labelledby="s-comm">
+            <h4 id="s-comm">Communication</h4>
+            <div class="skill-note">English &middot; Urdu</div>
+          </article>
+
+          <article class="skill-card" data-cat="soft" tabindex="0" aria-labelledby="s-prob">
+            <h4 id="s-prob">Creative Problem-Solving</h4>
+            <div class="skill-note">Adaptability & critical thinking</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section" data-reveal>
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <a href="../project1.html">
+            <img src="../smarthome.png" alt="Smart Home Project">
+            <div class="project-info">
+              <h3>Smart Home Automation</h3>
+              <p>Eye-blink controlled smart home system with IoT integration.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="../index.html">
+            <img src="../pf.png" alt="Portfolio Website">
+            <div class="project-info">
+              <h3>My Portfolio Website</h3>
+              <p>Personal portfolio showcasing my skills, projects & achievements.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="../project3.html">
+            <img src="../ev.png" alt="Energy Harvesting Project">
+            <div class="project-info">
+              <h3>Energy Harvesting for EVs</h3>
+              <p>IoT-based wireless charging for electric vehicles using road energy.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-reveal>
+      <div class="contact-container">
+        <div class="contact-live">
+          <video autoplay muted loop playsinline class="contact-wallpaper">
+            <source src="../contactvid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="contact-content">
+          <h2 class="section-title">Contact Me</h2>
+          <p class="contact-sub">Let&rsquo;s connect &mdash; I&rsquo;m always open to collaboration, guidance, or just a good chat.</p>
+
+          <div class="contact-cards">
+            <a href="https://www.instagram.com/zaheer-verse" target="_blank" class="contact-card">
+              <img src="../instagram.jpeg" alt="Instagram">
+              <div>
+                <h4>Instagram</h4>
+                <p>@zaheer_verse</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/923335398292" target="_blank" class="contact-card">
+              <img src="../whatsapp.png" alt="WhatsApp">
+              <div>
+                <h4>WhatsApp</h4>
+                <p>+92 333 5398292</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="form-container">
+            <h3 class="form-title">Get in Touch</h3>
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/zaheery991@gmail.com" method="POST">
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+              </div>
+
+              <div class="form-group">
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <input type="text" name="_honey" style="display:none">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            <p id="formStatus"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Zaheer-verse | All Rights Reserved</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+

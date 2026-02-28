@@ -1,0 +1,47 @@
+<svg width="1400" height="780" viewBox="0 0 1400 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10142A"/>
+      <stop offset="1" stop-color="#101B30"/>
+    </linearGradient>
+    <linearGradient id="a" x1="250" y1="130" x2="1200" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="780" rx="36" fill="url(#bg)"/>
+  <circle cx="190" cy="120" r="180" fill="#6366F1" fill-opacity="0.16"/>
+  <circle cx="1190" cy="670" r="230" fill="#2563EB" fill-opacity="0.16"/>
+
+  <rect x="120" y="96" width="1160" height="588" rx="26" fill="#0B1220" stroke="#334155" stroke-width="2"/>
+  <rect x="120" y="96" width="1160" height="74" rx="26" fill="#111827"/>
+  <circle cx="168" cy="133" r="8" fill="#EF4444"/>
+  <circle cx="194" cy="133" r="8" fill="#F59E0B"/>
+  <circle cx="220" cy="133" r="8" fill="#22C55E"/>
+
+  <rect x="160" y="208" width="520" height="210" rx="18" fill="#111827" stroke="#334155"/>
+  <text x="190" y="250" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="28" font-weight="800">Eye-Blink Smart Home</text>
+  <text x="190" y="288" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Accessibility-first IoT Automation</text>
+  <rect x="190" y="322" width="210" height="16" rx="8" fill="#374151"/>
+  <rect x="190" y="322" width="170" height="16" rx="8" fill="url(#a)"/>
+  <text x="190" y="370" fill="#C7D2FE" font-family="Arial, sans-serif" font-size="16">Dual-blink logic, relay switching, and Blynk control</text>
+
+  <rect x="710" y="208" width="530" height="210" rx="18" fill="#111827" stroke="#334155"/>
+  <text x="740" y="250" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="22" font-weight="700">Control Flow</text>
+  <text x="740" y="290" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="17">Blink detected -> Validate -> Toggle relay -> Update cloud</text>
+  <line x1="740" y1="318" x2="1180" y2="318" stroke="#6366F1" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="740" cy="318" r="9" fill="#6366F1"/>
+  <circle cx="900" cy="318" r="9" fill="#6366F1"/>
+  <circle cx="1040" cy="318" r="9" fill="#6366F1"/>
+  <circle cx="1180" cy="318" r="9" fill="#6366F1"/>
+
+  <rect x="160" y="456" width="1080" height="180" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="190" y="498" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="22" font-weight="700">Hardware Stack</text>
+  <text x="190" y="536" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">TCRT5000 • NodeMCU ESP8266 • Relay Module • Buzzer • Blynk IoT</text>
+  <rect x="190" y="560" width="250" height="36" rx="10" fill="#1E293B"/>
+  <text x="214" y="584" fill="#93C5FD" font-family="Arial, sans-serif" font-size="15">Wearable Sensor Input</text>
+  <rect x="460" y="560" width="240" height="36" rx="10" fill="#1E293B"/>
+  <text x="486" y="584" fill="#93C5FD" font-family="Arial, sans-serif" font-size="15">Reliable Local Logic</text>
+  <rect x="720" y="560" width="220" height="36" rx="10" fill="#1E293B"/>
+  <text x="748" y="584" fill="#93C5FD" font-family="Arial, sans-serif" font-size="15">Cloud Monitoring</text>
+</svg>

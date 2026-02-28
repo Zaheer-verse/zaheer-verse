@@ -1,0 +1,41 @@
+<svg width="1400" height="780" viewBox="0 0 1400 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1C1A"/>
+      <stop offset="1" stop-color="#102428"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="280" y1="140" x2="1080" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="780" rx="36" fill="url(#bg)"/>
+  <circle cx="190" cy="120" r="180" fill="#10B981" fill-opacity="0.16"/>
+  <circle cx="1210" cy="690" r="230" fill="#14B8A6" fill-opacity="0.16"/>
+
+  <rect x="120" y="96" width="1160" height="588" rx="26" fill="#0B1218" stroke="#2F4A4E" stroke-width="2"/>
+  <rect x="120" y="96" width="1160" height="74" rx="26" fill="#0F1B24"/>
+  <circle cx="168" cy="133" r="8" fill="#EF4444"/>
+  <circle cx="194" cy="133" r="8" fill="#F59E0B"/>
+  <circle cx="220" cy="133" r="8" fill="#22C55E"/>
+
+  <rect x="160" y="208" width="1080" height="190" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="190" y="252" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="30" font-weight="800">EV Wireless Charging and Energy Harvesting</text>
+  <text x="190" y="292" fill="#A7F3D0" font-family="Arial, sans-serif" font-size="18">Dynamic Resonant Charging + TEG + Piezo Harvesting</text>
+  <polyline points="190,334 330,310 470,322 610,286 750,300 890,272 1030,286 1170,250" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="160" y="430" width="520" height="206" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="190" y="470" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="22" font-weight="700">Research Axes</text>
+  <text x="190" y="506" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">• Coupling efficiency vs gap/alignment</text>
+  <text x="190" y="536" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">• EMF leakage and safety compliance</text>
+  <text x="190" y="566" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">• Harvested auxiliary energy per day</text>
+  <text x="190" y="596" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">• Cost-benefit for deployment corridors</text>
+
+  <rect x="720" y="430" width="520" height="206" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="750" y="470" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="22" font-weight="700">Bench Prototype Stack</text>
+  <text x="750" y="506" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">Grid -> Rectifier -> Inverter -> Ground Coils</text>
+  <text x="750" y="536" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">Receiver Coil -> Rectifier -> DC-DC -> Battery Emulator</text>
+  <text x="750" y="566" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">TEG/Piezo -> MPPT -> Buffer -> Sensor Nodes</text>
+  <rect x="750" y="588" width="260" height="30" rx="8" fill="#1E293B"/>
+  <text x="772" y="609" fill="#5EEAD4" font-family="Arial, sans-serif" font-size="14">SAE J2954 guided approach</text>
+</svg>

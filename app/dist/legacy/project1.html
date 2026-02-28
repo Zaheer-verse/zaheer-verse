@@ -1,0 +1,322 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>Smart Home Automation — Eye-Blink Detection & IoT | Zaheer-verse</title>
+  <meta name="description" content="Smart Home Automation Using Eye-Blink Detection & IoT — NodeMCU (ESP8266), TCRT5000 sensors, relay control and Blynk integration.">
+  <link rel="shortcut icon" href="titlog.jpg.png" type="image/x-icon">
+  <link rel="stylesheet" href="project1.css">
+  
+</head>
+<body>
+    <header>
+    <nav>
+      <div class="logo">Zaheer-verse &mdash; Smart Home</div>
+      <div class="nav-right">
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="project1-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="project1-nav">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#hardware">Hardware</a>
+          <a href="#wiring">Wiring</a>
+          <a href="#demo">Demo</a>
+          <a href="#sketch">Sketch</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Title + Tagline -->
+    <section class="section">
+      <h1>Smart Home Automation Using Eye-Blink Detection &amp; IoT</h1>
+      <div class="tagline">A modern solution for hands-free, accessible, and IoT-enabled home automation.</div>
+      <p class="lead">A reliable, low-cost system that lets users control home appliances using intentional double eye-blinks (IR sensors mounted on glasses), with optional remote control and telemetry via Blynk IoT.</p>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="section reveal">
+      <h2>Project Overview</h2>
+      <p>This project enables smart home control through eye-blink detection using IR sensors integrated with IoT (Blynk). Designed for accessibility, it empowers users with physical limitations to control appliances with ease.</p>
+
+      <h3>Objectives / Problem Statement</h3>
+      <div class="meta"><strong>What problem does it solve?</strong></div>
+      <p>Enables hands-free control of home appliances for people who have limited mobility or difficulty using traditional switches and touchscreens.</p>
+
+      <div class="meta"><strong>Who benefits from it?</strong></div>
+      <p>Disabled individuals, elderly users with reduced dexterity, patients with motor impairment, and anyone who needs a reliable, contactless control method.</p>
+
+      <div class="meta"><strong>Why is it innovative compared to normal smart homes?</strong></div>
+      <p>It uses wearable IR-based eye-blink input as a primary, intentional control method (dual-blink debouncing) and combines offline microcontroller control with optional IoT connectivity — prioritizing accessibility and reliability instead of only remote or voice control.</p>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section reveal">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Eye-blink detection for device control (dual-blink logic to avoid false triggers)</li>
+        <li>IR sensor mounted on glasses for natural, wearable input</li>
+        <li>IoT (Blynk) integration for remote access, notifications and status</li>
+        <li>Relay-controlled appliances: fan, bulb, buzzer feedback, etc.</li>
+        <li>Operates in both Offline (local) and Online (NodeMCU + Blynk) modes</li>
+        <li>Audible & visual feedback (buzzer + LED) to confirm user actions</li>
+      </ul>
+    </section>
+
+    <!-- Hardware & Software -->
+    <section id="hardware" class="section reveal two-col">
+      <div>
+        <h2>Hardware Used</h2>
+        <ul>
+          <li><strong>IR Obstacle / Reflective Sensor</strong> — TCRT5000 (mounted on glasses)</li>
+          <li><strong>NodeMCU (ESP8266)</strong> — microcontroller for Wi-Fi & Blynk</li>
+          <li><strong>1-Channel 5V Relay Module (optocoupler)</strong></li>
+          <li><strong>Buzzer</strong> — audible feedback</li>
+          <li><strong>Breadboard, jumper wires, project enclosure</strong></li>
+          <li><strong>5V regulated power supply (USB or external)</strong></li>
+          <li><strong>LED bulb / load for demo</strong></li>
+          <li><strong>Glasses frame / mount</strong> for TCRT5000</li>
+        </ul>
+
+        <h2 style="margin-top:14px">Software & Cloud</h2>
+        <ul>
+          <li>Arduino IDE (or PlatformIO)</li>
+          <li>Blynk IoT App & Blynk Web Dashboard</li>
+          <li>Blynk library for ESP8266 (BlynkSimpleEsp8266.h or the updated SDK)</li>
+          <li>Optional: VS Code, Git</li>
+        </ul>
+      </div>
+
+      <aside>
+        <img class="circuit" src="projectsnap.PNG" alt="Circuit diagram placeholder" onerror="this.style.display='none'">
+        <div class="small" style="margin-top:10px"></div>
+      </aside>
+    </section>
+
+    <!-- Wiring & Circuit Table -->
+    <section id="wiring" class="section reveal">
+      <h2>Circuit Diagram & Wiring</h2>
+
+      <h3>Pin mapping (as requested)</h3>
+      <table aria-label="Wiring table">
+        <thead>
+          <tr><th>Component</th><th>ESP8266 Pin (Label)</th><th>Code Label</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IR Sensor (Left)</td><td>D1</td><td>eyeLeft</td></tr>
+          <tr><td>IR Sensor (Right)</td><td>D2</td><td>eyeRight</td></tr>
+          <tr><td>Relay IN</td><td>D3</td><td>relayPin</td></tr>
+          <tr><td>Buzzer</td><td>D4</td><td>buzzerPin</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:12px">Power distribution summary</h3>
+      <table>
+        <thead><tr><th>Component</th><th>Power Source</th></tr></thead>
+        <tbody>
+          <tr><td>ESP8266 (NodeMCU)</td><td>USB (5V) / Regulated 5V</td></tr>
+          <tr><td>IR Sensors</td><td>3.3V or 5V depending on module</td></tr>
+          <tr><td>Relay Module</td><td>External 5V (separate when required)</td></tr>
+          <tr><td>Buzzer</td><td>External 5V or transistor-driven</td></tr>
+          <tr><td>LED Bulb (load)</td><td>Mains via relay COM/NO</td></tr>
+        </tbody>
+      </table>
+
+      <div class="notice" style="margin-top:12px">
+        <strong class="danger">Safety note:</strong> Keep low-voltage controls isolated from mains. Use insulated enclosures and consult an electrician for mains wiring.
+      </div>
+    </section>
+
+    <!-- Working Process / Flowchart -->
+    <section class="section reveal">
+      <h2>Working Process — Logic Flow</h2>
+      <p class="small">Blink detected → NodeMCU checks double-blink → Relay ON/OFF → Blynk updates status.</p>
+
+      <svg class="flow-svg" viewBox="0 0 900 160" aria-hidden="true">
+        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#00bcd4"/></marker></defs>
+        <rect x="18" y="18" width="160" height="48" rx="8" ry="8" fill="#071726" stroke="#083241" stroke-width="1"/><text x="98" y="48" fill="#9fb0c6" text-anchor="middle" font-size="14">Blink detected</text>
+        <rect x="210" y="18" width="200" height="48" rx="8" ry="8" fill="#071726" stroke="#083241" stroke-width="1"/><text x="310" y="48" fill="#9fb0c6" text-anchor="middle" font-size="14">Double-blink validation</text>
+        <rect x="440" y="18" width="160" height="48" rx="8" ry="8" fill="#071726" stroke="#083241" stroke-width="1"/><text x="520" y="48" fill="#9fb0c6" text-anchor="middle" font-size="14">Toggle Relay</text>
+        <rect x="620" y="18" width="220" height="48" rx="8" ry="8" fill="#071726" stroke="#083241" stroke-width="1"/><text x="730" y="48" fill="#9fb0c6" text-anchor="middle" font-size="14">Update Blynk & Notify</text>
+        <line x1="178" y1="42" x2="210" y2="42" stroke="#00bcd4" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="410" y1="42" x2="440" y2="42" stroke="#00bcd4" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="600" y1="42" x2="620" y2="42" stroke="#00bcd4" stroke-width="2" marker-end="url(#arrow)"/>
+      </svg>
+    </section>
+
+    <!-- Demo Video -->
+    <section id="demo" class="section reveal two-col">
+      <div>
+        <h2>Demo Video (Online & Offline)</h2>
+        <p class="small">This demo includes two parts: offline (local blink→relay) and online (NodeMCU → Blynk dashboard).</p>
+        <br>
+
+        <video id="demoVideo" controls playsinline style="width:100%;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.5)">
+          <source src="smarthome_demo.mp4" type="video/mp4">
+          Your browser does not support the video element. You can download the video below.
+        </video>
+
+        <div style="margin-top:10px">
+          <a id="downloadVideo" class="btn" href="smarthome_demo.mp4" download>⬇️ Download Demo (MP4)</a>
+        </div>
+
+        <div class="notice" style="margin-top:12px">
+          <strong>Note:</strong> If the player is blank when opening from disk, run a local server (e.g., <code>python -m http.server</code>).
+        </div>
+      </div>
+
+      <aside>
+        <h3>Quick test checklist</h3>
+        <ul>
+          <li>Mount sensors on glasses and secure.</li>
+          <li>Adjust TCRT5000 potentiometer for consistent detections.</li>
+          <li>Tune <code>BLINK_WINDOW</code> (300–900 ms) in firmware to fit natural blinks.</li>
+          <li>Use the NodeMCU sketch below for Blynk integration.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Sketch (downloadable + copy) -->
+    <section id="sketch" class="section reveal">
+      <h2>NodeMCU (ESP8266) Sketch — dual-blink + Blynk</h2>
+      <p class="small">Replace <code>YOUR_SSID</code>, <code>YOUR_PASSWORD</code>, and <code>YOUR_BLYNK_TOKEN</code> before uploading.</p>
+
+      <div style="margin:10px 0">
+        <a id="downloadSketch" class="btn" href="smarthome.ino" download>⬇️ Download Sketch (.ino)</a>
+      </div>
+
+      <pre id="sketchBlock"><code>
+// ===== smarthome.ino (NodeMCU ESP8266)
+// Pin labels: D1=eyeLeft, D2=eyeRight, D3=relayPin, D4=buzzerPin
+// Fill in your WiFi & Blynk credentials before uploading.
+
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+char ssid[]     = "YOUR_SSID";
+char pass[]     = "YOUR_PASSWORD";
+char auth[]     = "YOUR_BLYNK_TOKEN";
+
+const int eyeLeft  = D1; // sensor left (TCRT5000)
+const int eyeRight = D2; // sensor right
+const int relayPin = D3; // relay IN
+const int buzzerPin= D4; // buzzer
+
+unsigned long firstBlinkTime = 0;
+int blinkCount = 0;
+const unsigned long BLINK_WINDOW = 900; // ms - tune for comfort
+
+const int V_STATUS = V1;
+
+void setup(){
+  Serial.begin(115200);
+  pinMode(eyeLeft, INPUT);
+  pinMode(eyeRight, INPUT);
+  pinMode(relayPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+
+  digitalWrite(relayPin, LOW);
+  digitalWrite(buzzerPin, LOW);
+
+  Blynk.begin(auth, ssid, pass);
+
+  tone(buzzerPin, 1000, 80);
+  delay(120);
+}
+
+void loop(){
+  Blynk.run();
+
+  int leftVal = digitalRead(eyeLeft);
+  int rightVal= digitalRead(eyeRight);
+  int nowDetect = (leftVal == LOW || rightVal == LOW) ? 1 : 0;
+
+  static int lastDetect = 0;
+  if (lastDetect == 0 && nowDetect == 1){
+    unsigned long now = millis();
+    if (firstBlinkTime == 0){
+      firstBlinkTime = now;
+      blinkCount = 1;
+    } else {
+      if (now - firstBlinkTime <= BLINK_WINDOW){
+        blinkCount++;
+      } else {
+        firstBlinkTime = now;
+        blinkCount = 1;
+      }
+    }
+    Serial.print("blink registered. count=");
+    Serial.println(blinkCount);
+  }
+  lastDetect = nowDetect;
+
+  if (firstBlinkTime != 0 && (millis() - firstBlinkTime) > BLINK_WINDOW){
+    if (blinkCount >= 2){
+      toggleRelay();
+    }
+    blinkCount = 0;
+    firstBlinkTime = 0;
+  }
+}
+
+void toggleRelay(){
+  int current = digitalRead(relayPin);
+  digitalWrite(relayPin, !current);
+  digitalWrite(buzzerPin, HIGH);
+  delay(110);
+  digitalWrite(buzzerPin, LOW);
+
+  int state = digitalRead(relayPin);
+  Blynk.virtualWrite(V_STATUS, state);
+  Serial.print("Relay toggled. state=");
+  Serial.println(state);
+}
+      </code></pre>
+
+      <div class="small">Open this file in Arduino IDE (Board: NodeMCU 1.0 / ESP8266) and upload after adding credentials.</div>
+    </section>
+
+    <!-- Challenges & Future -->
+    <section class="section reveal grid-2">
+      <div>
+        <h2>Challenges & Solutions</h2>
+        <ul>
+          <li><strong>False triggers:</strong> solved by requiring a deliberate dual-blink (BLINK_WINDOW) and tuning sensor sensitivity.</li>
+          <li><strong>Ambient interference:</strong> mount sensors correctly and adjust pot on module.</li>
+          <li><strong>IoT reliability:</strong> blink control works offline; Blynk mirrors state and offers remote override.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Future Scope</h2>
+        <ul>
+          <li>Integrate Alexa / Google Home for voice + blink hybrid control.</li>
+          <li>Add gesture recognition (IMU / camera) to expand inputs.</li>
+          <li>Scale to full-home automation with groups, secure OTA updates and logging.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section small reveal">
+      <strong>Final notes</strong>
+      <p class="small">This document is built from your project details — wearable, accessible, and built for reliability. </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="current-year"></span> Zaheer-verse &mdash; Smart Home Automation
+  </footer>
+  <script src="project1.js"></script>
+</body>
+</html>
+
+
+

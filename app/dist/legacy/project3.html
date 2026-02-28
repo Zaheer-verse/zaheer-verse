@@ -1,0 +1,271 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>Wireless Charging & Road Energy Harvesting for EVs — Zaheer (resume energy harvesting)</title>
+  <meta name="author" content="Zaheer" />
+  <meta name="description" content="Hybrid dynamic resonant inductive charging + roadside thermoelectric & vibration harvesting. Bench demonstrator, simulations, BOM, roadmap, and research article." />
+  <meta name="keywords" content="Wireless power transfer, resonant inductive charging, thermoelectric, piezoelectric, EV infrastructure, SAE J2954" />
+  <link rel="stylesheet" href="project3.css">
+  <link rel="shortcut icon" href="titlog.jpg.png" type="image/x-icon">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" role="banner" aria-labelledby="title">
+      <div class="hero-top">
+        <div>
+          <h1 id="title">Wireless Charging & Road Energy Harvesting for EVs ( In_process Article ) </h1>
+          <div class="meta">Project short name: <strong>resume energy harvesting</strong> — Author: <strong>Zaheer</strong> </div>
+          <div class="one-liner">Charge while you move — a hybrid system merging dynamic resonant inductive charging with thermoelectric and vibration energy harvesting to top-up EVs and power roadside electronics.</div>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">EV infrastructure</span>
+            <span class="tag">resonant inductive coupling</span>
+            <span class="tag">thermoelectric</span>
+            <span class="tag">piezoelectric</span>
+            <span class="tag">energy harvesting</span>
+            <span class="tag">SAE J2954</span>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn secondary" href="index.html">Back Home</a>
+          <a class="btn" href="#full-article">Open full research article</a>
+          <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
+        </div>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <a href="#abstract">Abstract</a>
+        <a href="#overview">Project overview</a>
+        <a href="#full-article">Full research article</a>
+        <a href="#prototype-plan">Prototype plan</a>
+        <a href="#bom">BOM & Costs</a>
+      </nav>
+    </header>
+
+    <main class="card" role="main">
+      <!-- 1. Abstract -->
+      <section id="abstract" aria-labelledby="s1">
+        <h2 id="s1">1. Abstract</h2>
+        <p class="lead">
+          This project develops a hybrid on-road charging ecosystem that combines <strong>dynamic resonant inductive power transfer (RIPT)</strong> embedded beneath road lanes with auxiliary energy harvesting using <strong>thermoelectric generators (TEGs)</strong> and vibration-based transducers. The system aims to reduce onboard battery capacity requirements for fleet vehicles by providing opportunistic top-ups during normal route operation while using harvested heat and mechanical energy to power sensors, control electronics, and local energy buffers. The research includes electromagnetic simulations, bench-scale resonant pad prototypes, integration of TEG and vibration harvesters, and a proposed field-test lane. Key metrics: energy per vehicle pass (kWh/pass), end-to-end efficiency (%), harvested auxiliary energy (Wh/day), EMF leakage, and cost–benefit analysis.
+        </p>
+        <p style="margin-top:10px; font-style:italic; color:var(--accent)">A road that gives back: combining resonant wireless charging with roadside energy harvesters to make EVs lighter, cities cleaner, and roads smarter.</p>
+      </section>
+
+      <!-- 2. Keywords -->
+      <section id="keywords" aria-labelledby="s2">
+        <h2 id="s2">2. Keywords</h2>
+        <p class="lead">Wireless power transfer; resonant inductive charging; electric vehicles; thermoelectric generator; piezoelectric harvesting; road-embedded coils; energy harvesting; infrastructure electrification</p>
+      </section>
+
+      <!-- 3. Project overview -->
+      <section id="overview" aria-labelledby="s3">
+        <h2 id="s3">3. Project overview (portfolio-friendly)</h2>
+        <p><strong>Problem:</strong> Range anxiety, large battery mass, and sparse charging networks slow EV adoption and increase lifecycle costs.</p>
+        <p><strong>Solution:</strong> Embed resonant inductive coils under high-utilization lanes (buses, logistics corridors) to provide intermittent high-power top-ups while scavenging road heat and vibrational energy to power local electronics and reduce grid draw for control systems.</p>
+        <p><strong>Impact:</strong> Reduced battery capacity for fleet vehicles, lower operational carbon, continuous partial charging without stopping, and nodes of self-powered smart infrastructure.</p>
+
+        <h3 style="margin-top:12px">Deliverables (for portfolio)</h3>
+        <ul>
+          <li>System block diagram and coil topology illustrations</li>
+          <li>Bench-scale static pad prototype photos and test graphs</li>
+          <li>BOM and wiring snippets for the bench demonstrator</li>
+          <li>Simulation results (coupling, field maps, efficiency vs gap/offset)</li>
+          <li>Data logs (power delivery, harvested Wh/day)</li>
+          <li>One-page poster and slide deck for presentations</li>
+        </ul>
+      </section>
+
+      <!-- 4. Full research article -->
+      <section id="full-article" aria-labelledby="s4">
+        <h2 id="s4">4. Full research article (ready for Overleaf / publication)</h2>
+
+        <h3 id="intro">4.1 Introduction</h3>
+        <p>
+          Energy hides in places we ignore: heat trapped under asphalt, rhythm created by tires. This research seeks to turn those hidden energies into utility. We investigate a hybrid architecture where <strong>dynamic resonant inductive charging</strong> delivers meaningful power to moving EVs and roadside <strong>TEG + vibration harvesters</strong> supply the low-power infrastructure that controls and secures that charging.
+        </p>
+        <p><strong>Aims:</strong></p>
+        <ol>
+          <li>Design and validate a bench-scale resonant inductive pad (transmitter + receiver) and measure transfer efficiency under variable gap and alignment.</li>
+          <li>Integrate TEGs and vibration harvesters to power sensor/control nodes; quantify harvested energy.</li>
+          <li>Model scalability, cost, and deployment strategies for fleet corridors.</li>
+        </ol>
+
+        <h3 id="lit-review">4.2 Literature Review</h3>
+        <p class="lead">Summary of prior work and positioning of this research:</p>
+        <ol>
+          <li><strong>Dynamic road charging — pilots and demonstrations:</strong> Several demonstrations show technical feasibility for both inductive and conductive road systems (examples: Electreon, eRoadArlanda). These pilots inform achievable transfer rates and highlight installation/maintenance trade-offs.</li>
+          <li><strong>Standards and interoperability:</strong> SAE J2954 provides a foundation for WPT safety and alignment; dynamic systems must extend and adapt those test methods for moving vehicles and higher duty cycles.</li>
+          <li><strong>Thermoelectric harvesting:</strong> TEGs can recover useful Wh under favorable gradients; design must manage thermal interfaces and durability.</li>
+          <li><strong>Vibration / piezoelectric harvesting:</strong> Low per-device power density but reliable for powering sensors and lights with robust packaging.</li>
+        </ol>
+
+        <h3 id="theory">4.3 Theoretical Background</h3>
+        <p>Essential equations and explanations to include in the manuscript.</p>
+        <pre class="code">
+Mutual inductance and coupling coefficient:
+  k = M / sqrt(L1 * L2)
+
+Resonant frequency:
+  f0 = 1 / (2 * pi * sqrt(L * C))
+
+End-to-end efficiency (practical):
+  η = (P_delivered_to_battery / P_grid) * 100%
+
+Notes:
+- Include Q-factor: Q = ωL / R (for series resonant coil)
+- Discuss detuning: change in f0 with temperature, mechanical stress
+- FOD and EMF leakage safety thresholds per SAE / local regulations
+        </pre>
+
+        <h3 id="architecture">4.4 System Architecture</h3>
+        <p><strong>High-level blocks:</strong></p>
+        <ul>
+          <li>Grid → step-down/transformer → rectifier → DC link → inverter → transmitter coil segments (ground assembly, GA)</li>
+          <li>Road sensors & vehicle detection → coil activation logic (segmentation reduces power draw)</li>
+          <li>Vehicle receiver (VA): pickup coil, rectifier, DC–DC converter, BMS handshake</li>
+          <li>Auxiliary harvesters → MPPT → energy buffer → sensors / control</li>
+          <li>Communication & metering layer (billing, authentication) — secure PLC or short-range wireless</li>
+        </ul>
+
+        <p><strong>Coil design choices:</strong></p>
+        <ul>
+          <li>Double-D for lateral tolerance or circular for symmetric coupling</li>
+          <li>Segmented coils for selective energizing beneath a vehicle</li>
+          <li>Ferrite backing and shielding plates to concentrate flux and reduce leakage</li>
+        </ul>
+
+        <h3 id="materials-methods">4.5 Materials & Methods (experimental plan)</h3>
+        <p><strong>Bench components:</strong></p>
+        <ul>
+          <li>Transmitter coil (0.5m x 0.5m copper winding) with ferrite backing</li>
+          <li>Driver inverter (full-bridge), resonant capacitors, MOSFET/IGBT gate drivers</li>
+          <li>Receiver coil matched to transmitter, rectifier, DC–DC emulator load</li>
+          <li>Thermoelectric modules with small heat sink and hotplate for asphalt simulation</li>
+          <li>Piezo tiles or shaker to simulate vibration harvesting</li>
+        </ul>
+
+        <p><strong>Measurements & instrumentation:</strong> power analyzer, oscilloscope, gaussmeter, temperature loggers, data-logging microcontroller (ESP32 or STM32), MPPT evaluation boards.</p>
+
+        <h3 id="metrics">4.6 Metrics & Data Analysis</h3>
+        <p>Primary metrics and statistical plan:</p>
+        <ul>
+          <li>Delivered energy per pass (kWh/pass)</li>
+          <li>Average power (kW) and duty cycle</li>
+          <li>End-to-end efficiency (%) at different alignments and gaps</li>
+          <li>Auxiliary harvested energy (Wh/day)</li>
+          <li>Field leakage relative to safety thresholds</li>
+          <li>Statistical analysis: mean ± SD, ANOVA for multiple-coil configurations, regression for alignment effects</li>
+        </ul>
+
+        <h3 id="expected">4.7 Expected Results & Discussion</h3>
+        <p>
+          Bench static pad expected to demonstrate tens to hundreds of watts (scale dependent). Literature field pilots reach kW–tens of kW for segmented long lanes. Expect efficiency reduction with gap and lateral offset — mitigated by resonant tuning and segmented activation.
+        </p>
+
+        <h3 id="limitations">4.8 Limitations</h3>
+        <ul>
+          <li>Auxiliary harvesters have low power density</li>
+          <li>Pavement-integrated coils are subject to thermal cycling, moisture, and maintenance complexity</li>
+          <li>Infrastructure cost and civil works are significant; economic modeling is essential</li>
+        </ul>
+
+        <h3 id="concl">4.9 Conclusion</h3>
+        <p>
+          Hybridizing dynamic inductive charging with roadside harvesters creates a layered path to electrified roads: high-power top-ups for vehicles, and self-powered intelligence for the road.
+        </p>
+
+        <h3 id="future">4.10 Future Work</h3>
+        <ul>
+          <li>Long-term durability tests under thermal cycling and traffic</li>
+          <li>Integration with microgrid and renewable sources</li>
+          <li>Billing and roaming standards for multi-operator deployments</li>
+        </ul>
+      </section>
+
+      <!-- 5. Prototype plan -->
+      <section id="prototype-plan" aria-labelledby="s5">
+        <h2 id="s5">5. Prototype plan & step-by-step implementation</h2>
+
+        <p><strong>Phase 0 — Research & standards</strong>: Gather SAE J2954, Electreon/Gotland reports, eRoadArlanda materials, and recent WPT conference papers.</p>
+
+        <p><strong>Phase 1 — Simulation & design</strong></p>
+        <ol>
+          <li>Create CAD for coil geometries (double-D, circular) and vehicle-slab alignment.</li>
+          <li>Run FEM (COMSOL/Ansys Maxwell/open-source alt) to estimate mutual inductance, flux leakage, and FOD scenarios.</li>
+          <li>Choose operating frequency and resonant capacitor bank values; pick Litz wire or parallel strands to reduce skin effect at tens to hundreds of kHz range.</li>
+        </ol>
+
+        <p><strong>Phase 2 — Bench prototype (static pad)</strong></p>
+        <ol>
+          <li>Wind transmitter coil: use form, count turns, note inductance.</li>
+          <li>Mount ferrite backing to concentrate flux and reduce downward leakage.</li>
+          <li>Assemble inverter driver (full-bridge), resonant network, and soft-start control.</li>
+          <li>Build receiver with diode bridge + DC–DC converter to emulate EV battery charge acceptance curve.</li>
+          <li>Tune resonance using variable capacitors; measure open-circuit and loaded transfer.</li>
+        </ol>
+
+        <p><strong>Phase 3 — Harvesters integration</strong></p>
+        <ol>
+          <li>Mount TEG modules on hotplate + heat sink to emulate asphalt temperature gradients.</li>
+          <li>Place piezo elements under weighted plates to emulate vehicle passes.</li>
+          <li>Connect harvesters to MPPT boards and charge small buffers (supercaps / Li-ion) for powering sensors and comms.</li>
+        </ol>
+
+        <p><strong>Phase 4 — Data collection & analysis</strong>: systematic sweeps across gap and offset conditions, logging via microcontroller to CSV, analyze in Python/MATLAB.</p>
+
+        <p><strong>Phase 5 — Field proposal</strong>: design a modular slab (5–20 m) for controlled vehicle pass tests with safety interlocks and remote monitoring.</p>
+
+        <h4 style="margin-top:12px">Quick bench wiring summary (high-level)</h4>
+        <ol>
+          <li>Grid → isolation transformer → rectifier → DC link capacitor → inverter full-bridge → transmitter coil.</li>
+          <li>Receiver coil → rectifier → DC–DC converter → programmable load or battery emulator.</li>
+          <li>TEGs & piezo → MPPT → small buffer → sensor node (ESP32) → cloud logging.</li>
+        </ol>
+      </section>
+
+      <!-- 6. BOM -->
+      <section id="bom" aria-labelledby="s6">
+        <h2 id="s6">6. Bill of Materials (bench-scale) & Estimated costs</h2>
+        <p><em>Note: Costs are approximate in USD — update with local vendor quotes and convert to PKR as needed.</em></p>
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Qty</th><th>Notes</th><th>Est. cost (USD)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Copper wire (Litz or enamel)</td><td>50 m</td><td>coil winding</td><td>$40</td></tr>
+            <tr><td>Ferrite sheets/backing</td><td>2 pcs</td><td>coil shielding</td><td>$60</td></tr>
+            <tr><td>Full-bridge inverter kit (MOSFETs + drivers)</td><td>1</td><td>gate drivers + heat sink</td><td>$150</td></tr>
+            <tr><td>Resonant capacitors</td><td>4</td><td>high-voltage</td><td>$30</td></tr>
+            <tr><td>Rectifier bridge</td><td>1</td><td>for receiver</td><td>$15</td></tr>
+            <tr><td>DC–DC converter (programmable load)</td><td>1</td><td>emulate battery</td><td>$80</td></tr>
+            <tr><td>Thermoelectric modules (TEG)</td><td>4</td><td>small modules</td><td>$40</td></tr>
+            <tr><td>Piezo tiles / transducers</td><td>4</td><td>vibration harvesters</td><td>$30</td></tr>
+            <tr><td>Supercapacitor / small battery</td><td>1</td><td>energy buffer</td><td>$25</td></tr>
+            <tr><td>Misc: PCB, connectors, enclosure</td><td>-</td><td>wiring, prototyping</td><td>$50</td></tr>
+            <tr><td>Oscilloscope / Power analyzer</td><td>rental</td><td>lab instrument (rental estimate)</td><td>$0–$400</td></tr>
+            <tr><td><strong>Estimated total (bench)</strong></td><td></td><td></td><td><strong>$600–$1200</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px">Conversion to PKR: use the current exchange rate when creating the procurement report. (Example: if 1 USD ≈ 300 PKR, multiply accordingly — update with today's exact rate.)</p>
+      </section>
+  
+      </main>
+  
+  <script src="project3.js"></script>
+  
+  <!-- ==== FOOTER SECTION ====  -->
+ <footer>
+    &copy; <span id="current-year"></span> Zaheer-verse &mdash; Wireless Charging & Road Energy Harvesting 
+  </footer>
+  </div>
+</body>
+</html>
+
+
+
+
