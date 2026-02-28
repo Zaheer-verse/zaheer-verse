@@ -20,13 +20,15 @@ function App() {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const pathname = window.location.pathname.toLowerCase();
+  // Normalize trailing slashes so /resume/ and /projects/slug/ resolve correctly.
+  const normalizedPath = pathname.replace(/\/+$/, '') || '/';
 
   const getPage = () => {
-    if (pathname === '/resume') {
+    if (normalizedPath === '/resume') {
       return <ResumePage />;
     }
-    if (pathname.startsWith('/projects/')) {
-      const slug = pathname.replace('/projects/', '');
+    if (normalizedPath.startsWith('/projects/')) {
+      const slug = normalizedPath.replace('/projects/', '');
       return <ProjectDetailsPage slug={slug} />;
     }
     return (
