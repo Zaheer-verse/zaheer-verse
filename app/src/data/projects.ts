@@ -67,7 +67,7 @@ export const projects: ProjectItem[] = [
       'A modern and accessible smart-home solution using wearable eye-blink detection, relay control, and optional IoT integration through Blynk.',
     tags: ['Arduino', 'IoT', 'ESP8266', 'C++', 'Blynk'],
     image: '/smart-home-hero.svg',
-    video: '/legacy/smarthome_demo.mp4',
+    video: 'https://media.githubusercontent.com/media/Zaheer-verse/zaheer-verse/main/app/public/legacy/smarthome_demo.mp4',
     gradient: 'from-indigo-500 to-blue-600',
     detail: {
       subtitle: 'Smart Home Automation Using Eye-Blink Detection and IoT',
@@ -157,7 +157,11 @@ export const projects: ProjectItem[] = [
       media: [
         { type: 'image', src: '/legacy/smarthome.png', label: 'Smart Home Prototype' },
         { type: 'image', src: '/legacy/projectsnap.PNG', label: 'Circuit Snapshot' },
-        { type: 'video', src: '/legacy/smarthome_demo.mp4', label: 'Smart Home Demo Video' },
+        {
+          type: 'video',
+          src: 'https://media.githubusercontent.com/media/Zaheer-verse/zaheer-verse/main/app/public/legacy/smarthome_demo.mp4',
+          label: 'Smart Home Demo Video'
+        },
         { type: 'file', src: '/legacy/smarthome.ino', label: 'NodeMCU Sketch (.ino)' },
       ],
     },
