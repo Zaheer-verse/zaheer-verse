@@ -17,6 +17,7 @@ const contactOptions = [
 const ProjectDetailsPage = ({ slug }: Props) => {
   const project = findProject(slug);
   const [showContacts, setShowContacts] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   if (!project) {
     return (
@@ -72,9 +73,25 @@ const ProjectDetailsPage = ({ slug }: Props) => {
 
             {project.video && (
               <div className="mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40 p-3">
-                <video controls playsInline className="w-full rounded-xl">
-                  <source src={project.video} type="video/mp4" />
-                </video>
+                {!videoError ? (
+                  <video controls playsInline className="w-full rounded-xl" onError={() => setVideoError(true)}>
+                    <source src={project.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="p-4 text-slate-300">
+                    Video preview could not be loaded here.
+                    <div className="mt-2">
+                      <a
+                        href={project.video}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-indigo-300 hover:text-indigo-200"
+                      >
+                        Open demo video in a new tab
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 

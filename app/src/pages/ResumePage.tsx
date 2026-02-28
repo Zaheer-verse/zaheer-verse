@@ -22,14 +22,24 @@ const ResumePage = () => {
                 <h1 className="text-3xl sm:text-5xl font-bold text-white mb-2">Zaheer Yousaf</h1>
                 <p className="text-slate-300">Computer Science Student | IoT Enthusiast | Web Developer</p>
               </div>
-              <a
-                href="/legacy/resume.pdf.pdf"
-                download
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-gradient text-white font-medium"
-              >
-                <Download size={16} />
-                Download Resume PDF
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/legacy/resume.pdf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-700 text-slate-100 hover:border-indigo-500/40"
+                >
+                  Open Resume PDF
+                </a>
+                <a
+                  href="/legacy/resume.pdf.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-gradient text-white font-medium"
+                >
+                  <Download size={16} />
+                  Download Resume PDF
+                </a>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 mb-10">
@@ -63,12 +73,26 @@ const ResumePage = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
-              <iframe
-                src="/legacy/resume.pdf.pdf"
-                title="Zaheer Yousaf Resume"
-                className="w-full h-[70vh]"
-              />
+            <div className="rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40 p-2">
+              <object
+                data="/legacy/resume.pdf.pdf"
+                type="application/pdf"
+                className="w-full h-[70vh] rounded-xl"
+              >
+                <div className="p-4 text-slate-300">
+                  Inline PDF preview is not available in this browser.
+                  <div className="mt-3">
+                    <a
+                      href="/legacy/resume.pdf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-300 hover:text-indigo-200"
+                    >
+                      Open Resume PDF in a new tab
+                    </a>
+                  </div>
+                </div>
+              </object>
             </div>
           </div>
         </section>
