@@ -409,6 +409,24 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                       <p className="p-3 text-sm text-slate-300">{item.label}</p>
                     </div>
                   ))}
+                  {detail.media.filter((m) => m.type === 'video').map((item) => (
+                    <div key={item.src} className="rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
+                      <video controls playsInline className="w-full h-56 object-cover">
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                      <div className="p-3">
+                        <p className="text-sm text-slate-300">{item.label}</p>
+                        <a
+                          href={item.src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block mt-2 text-sm text-indigo-300 hover:text-indigo-200"
+                        >
+                          Open video in new tab
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {detail.media.filter((m) => m.type === 'file').map((item) => (
