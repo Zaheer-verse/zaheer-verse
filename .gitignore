@@ -1,0 +1,34 @@
+﻿# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+
+# Build/cache
+app/dist/
+app/.vite/
+app/.cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Optional local tooling
+.vscode/
+.idea/
