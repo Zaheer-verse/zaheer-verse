@@ -5,7 +5,8 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // Absolute asset paths are required so nested routes (/projects/...) load JS/CSS correctly on Vercel.
+  base: '/',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
