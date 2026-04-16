@@ -1,96 +1,106 @@
-﻿# Zaheer Verse Portfolio
+<h1 align="center">Zaheer Yousaf</h1>
 
-A production-ready personal portfolio and project showcase built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.
+<p align="center">Computer Science Student | IoT Enthusiast | Web Developer</p>
 
-## Highlights
+<p align="center">
+  I build accessible web products, connected systems, and research-driven prototypes that turn practical ideas into real solutions.
+</p>
 
-- Modern single-page portfolio with animated sections
-- Dedicated project detail routes (`/projects/:slug`)
-- Dedicated resume route (`/resume`)
-- Rich media support (images and videos)
-- Legacy project artifacts preserved under `app/public/legacy`
-- Git LFS configured for large media files
+<p align="center">
+  <a href="https://zaheer-verse.vercel.app/">Portfolio</a> |
+  <a href="https://www.linkedin.com/in/zaheer-yousaf">LinkedIn</a> |
+  <a href="https://github.com/Zaheer-verse">GitHub</a> |
+  <a href="mailto:zaheery991@gmail.com">Email</a> |
+  <a href="https://wa.me/923335398292">WhatsApp</a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Zaheer-verse&label=Profile%20views&color=0f172a&style=flat" alt="Zaheer Yousaf profile views" />
+</p>
+
+## About Me
+
+- BS Computer Science student at the University of Sialkot
+- Based in Daska, Sialkot, Pakistan
+- Focused on frontend web development, IoT systems, smart automation, and technical research
+- Interested in building products that are simple to use, reliable to operate, and practical in real life
+- Open to internships, freelance work, collaborations, and research opportunities
+
+## What I Do
+
+- Build responsive web interfaces with React, TypeScript, JavaScript, HTML, and CSS
+- Prototype embedded and IoT systems with Arduino, NodeMCU ESP8266, sensors, relays, and Blynk
+- Write technical documentation and research material in IEEE style with LaTeX and Overleaf
+- Support projects with technical writing, content development, presentation work, and practical database administration
 
 ## Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
+**Languages**
 
-## Repository Structure
+`C` `C++` `Python` `JavaScript` `TypeScript` `HTML` `CSS` `Assembly (EMU8086)`
 
-```text
-.
-|- app/
-|  |- src/                 # React source code
-|  |- public/legacy/       # Legacy media + static assets
-|  |- dist/                # Build output
-|  |- package.json
-|- package.json            # Root runner scripts
-|- .gitattributes          # Git LFS tracking
-```
+**Frontend**
 
-## Local Development
+`React` `Vite` `Tailwind CSS` `Framer Motion` `Responsive Design`
 
-Prerequisites:
+**IoT / Embedded**
 
-- Node.js 20+
-- npm 10+
+`Arduino` `ESP8266` `NodeMCU` `Sensor Integration` `Relay Control` `Wearables` `Smart Home Automation`
 
-Install dependencies:
+**Tools**
 
-```bash
-npm install
-```
+`Git` `GitHub` `VS Code` `Blynk` `MS Office` `Overleaf` `LaTeX`
 
-Start dev server:
+**Currently Learning**
 
-```bash
-npm run dev
-```
+`Machine Learning` `Cloud Computing` `Blockchain` `Cybersecurity`
 
-Build for production:
+## Featured Projects
 
-```bash
-npm run build
-```
+### Eye-Blink Smart Home
 
-Preview production build:
+An accessible smart home automation system that uses wearable eye-blink detection, NodeMCU logic, relay control, and optional Blynk integration for remote interaction.
 
-```bash
-npm run preview
-```
+- Stack: `Arduino` `ESP8266` `C++` `IoT` `Blynk`
+- Link: [Project Details](https://zaheer-verse.vercel.app/projects/eye-blink-smart-home)
 
-## Deployment (Vercel)
+### EV Energy Harvesting
 
-Recommended Vercel settings:
+A research-focused concept for electric vehicles that combines dynamic resonant wireless charging with roadside thermal and vibration energy harvesting.
 
-- Framework Preset: `Vite`
-- Root Directory: `app`
-- Build Command: `npm run build`
-- Output Directory: `dist`
+- Stack: `Research` `Electronics` `IoT` `EV` `LaTeX`
+- Link: [Project Details](https://zaheer-verse.vercel.app/projects/ev-energy-harvesting)
 
-If you import this repository in Vercel, set the project root to `app`.
+### Expense Management System
 
-## Media and Git LFS
+A student-focused web application for tracking expenses, budgets, and monthly insights with a clean dashboard experience.
 
-Large video files are tracked with Git LFS (`*.mp4`, `*.mov`, `*.webm`, `*.mkv`).
+- Stack: `React` `TypeScript` `Dashboard` `Charts`
+- Links: [Live Demo](https://expencemanagment.vercel.app/) | [Repository](https://github.com/Zaheer-verse/expense-management-system)
 
-Clone with LFS support:
+## Professional Highlights
 
-```bash
-git lfs install
-git lfs pull
-```
+- 3+ years of coding and hands-on problem solving
+- 10+ academic, personal, and portfolio projects
+- Experience spanning web development, IoT prototyping, research documentation, and frontend UI work
+- Comfortable collaborating across technical writing, implementation, and presentation
 
-## Documentation
+## GitHub Stats
 
-- [ABOUT.md](ABOUT.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [SECURITY.md](SECURITY.md)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Zaheer-verse&show_icons=true&hide_border=true&rank_icon=github&theme=transparent" alt="Zaheer Yousaf GitHub stats" />
+</p>
 
-## License
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zaheer-verse&layout=compact&hide_border=true&theme=transparent" alt="Top languages" />
+</p>
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE).
+## Connect With Me
+
+- Portfolio: https://zaheer-verse.vercel.app/
+- LinkedIn: https://www.linkedin.com/in/zaheer-yousaf
+- GitHub: https://github.com/Zaheer-verse
+- Email: zaheery991@gmail.com
+- WhatsApp: https://wa.me/923335398292
+
+I am always interested in meaningful collaborations, creative product ideas, and opportunities where software, research, and connected systems come together.
