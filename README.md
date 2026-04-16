@@ -98,7 +98,6 @@ A student-focused web application for tracking expenses, budgets, and monthly in
 ## Connect With Me
 
 - Portfolio: https://zaheer-verse.vercel.app/
-- LinkedIn: https://www.linkedin.com/in/zaheer-yousaf
 - GitHub: https://github.com/Zaheer-verse
 - Email: zaheery991@gmail.com
 
