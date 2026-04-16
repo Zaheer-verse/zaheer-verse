@@ -101,6 +101,5 @@ A student-focused web application for tracking expenses, budgets, and monthly in
 - LinkedIn: https://www.linkedin.com/in/zaheer-yousaf
 - GitHub: https://github.com/Zaheer-verse
 - Email: zaheery991@gmail.com
-- WhatsApp: https://wa.me/923335398292
 
 I am always interested in meaningful collaborations, creative product ideas, and opportunities where software, research, and connected systems come together.
