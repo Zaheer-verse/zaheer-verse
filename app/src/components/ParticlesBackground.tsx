@@ -14,6 +14,10 @@ const ParticlesBackground = () => {
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number | null>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
+  const paletteRef = useRef({
+    particle: '99, 102, 241',
+    accent: '139, 92, 246',
+  });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,8 +31,19 @@ const ParticlesBackground = () => {
       canvas.height = window.innerHeight;
     };
 
+    const syncPalette = () => {
+      const styles = getComputedStyle(document.documentElement);
+      paletteRef.current = {
+        particle: styles.getPropertyValue('--particle-rgb').trim() || '99, 102, 241',
+        accent: styles.getPropertyValue('--particle-alt-rgb').trim() || '139, 92, 246',
+      };
+    };
+
     resizeCanvas();
+    syncPalette();
     window.addEventListener('resize', resizeCanvas);
+    const observer = new MutationObserver(syncPalette);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
     // Initialize particles
     const particleCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 25000));
@@ -63,7 +78,7 @@ const ParticlesBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 102, 241, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(${paletteRef.current.particle}, ${particle.opacity})`;
         ctx.fill();
 
         // Draw connections
@@ -76,7 +91,7 @@ const ParticlesBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(other.x, other.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(${paletteRef.current.particle}, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -91,7 +106,7 @@ const ParticlesBackground = () => {
           ctx.beginPath();
           ctx.moveTo(particle.x, particle.y);
           ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
-          ctx.strokeStyle = `rgba(139, 92, 246, ${0.15 * (1 - mouseDistance / 200)})`;
+          ctx.strokeStyle = `rgba(${paletteRef.current.accent}, ${0.15 * (1 - mouseDistance / 200)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -105,6 +120,7 @@ const ParticlesBackground = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
+      observer.disconnect();
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

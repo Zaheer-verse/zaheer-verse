@@ -12,9 +12,15 @@ import {
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
+import Reveal from '../components/Reveal';
+import { useScrollDepth } from '../hooks/use-scroll-depth';
 
 const Contact = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+  const { ref: sectionRef, contentStyle, accentStyle, stageStyle } = useScrollDepth<HTMLElement>({
+    distance: 42,
+    tilt: 4,
+    scale: 0.02,
+  });
   const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -170,13 +176,15 @@ const Contact = () => {
       ref={sectionRef}
       id="contact"
       className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8"
+      style={stageStyle}
     >
-      <div className="max-w-7xl mx-auto">
+      <motion.div
+        className="scroll-depth-layer top-10 left-[12%] h-28 w-28 rounded-full bg-[color:var(--hero-glow)]"
+        style={accentStyle}
+      />
+      <motion.div className="max-w-7xl mx-auto scroll-depth-shell" style={contentStyle}>
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+        <Reveal
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-4">
@@ -188,7 +196,7 @@ const Contact = () => {
           <p className="text-slate-400 max-w-2xl mx-auto">
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Left: Contact Info */}
@@ -205,8 +213,10 @@ const Contact = () => {
                   key={info.label}
                   href={info.href}
                   variants={itemVariants}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 transition-all group"
-                  whileHover={{ x: 4 }}
+                  data-cursor="card"
+                  data-cursor-label={info.label}
+                  className="interactive-surface section-panel flex items-center gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 transition-all group"
+                  whileHover={{ x: 4, y: -2 }}
                 >
                   <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center group-hover:bg-indigo-500/20 transition-colors">
                     <info.icon className="w-5 h-5 text-indigo-400" />
@@ -229,8 +239,10 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 transition-all ${social.color} hover:border-current`}
-                    whileHover={{ scale: 1.1, y: -4 }}
+                    data-cursor="button"
+                    data-cursor-label={social.label}
+                    className={`interactive-surface w-12 h-12 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 transition-all ${social.color} hover:border-current`}
+                    whileHover={{ scale: 1.08, y: -4 }}
                     whileTap={{ scale: 0.95 }}
                     title={social.label}
                   >
@@ -243,7 +255,8 @@ const Contact = () => {
             {/* Availability Badge */}
             <motion.div
               variants={itemVariants}
-              className="p-4 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20"
+              data-cursor="card"
+              className="section-panel p-4 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20"
             >
               <div className="flex items-center gap-3 mb-2">
                 <span className="relative flex h-3 w-3">
@@ -269,7 +282,7 @@ const Contact = () => {
               variants={itemVariants}
               ref={formRef}
               onSubmit={handleSubmit}
-              className="p-6 sm:p-8 rounded-3xl bg-slate-800/30 border border-slate-700/50"
+              className="section-panel p-6 sm:p-8 rounded-3xl bg-slate-800/30 border border-slate-700/50 shadow-[0_30px_70px_rgba(8,10,20,0.24)]"
             >
               <h3 className="text-xl font-semibold text-white mb-6">Send a Message</h3>
               
@@ -281,6 +294,7 @@ const Contact = () => {
                     id="name"
                     name="name"
                     required
+                    data-cursor="input"
                     className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
                     placeholder="John Doe"
                   />
@@ -292,6 +306,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     required
+                    data-cursor="input"
                     className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
                     placeholder="john@example.com"
                   />
@@ -305,6 +320,7 @@ const Contact = () => {
                   id="subject"
                   name="subject"
                   required
+                  data-cursor="input"
                   className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
                   placeholder="Project Inquiry"
                 />
@@ -317,6 +333,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={5}
+                  data-cursor="input"
                   className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none"
                   placeholder="Tell me about your project..."
                 />
@@ -325,8 +342,10 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 rounded-xl btn-gradient text-white font-medium flex items-center justify-center gap-2"
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                data-cursor="button"
+                data-cursor-label="Send"
+                className="interactive-surface w-full px-6 py-4 rounded-xl btn-gradient text-white font-medium flex items-center justify-center gap-2"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -1 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
                 {isSubmitting ? (
@@ -366,7 +385,7 @@ const Contact = () => {
             </motion.form>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Mail, Download, Instagram, MessageCircle, Github, Linkedin } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -25,6 +26,8 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const haloY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -36]);
 
   useEffect(() => {
     const currentRole = roles[currentIndex];
@@ -73,7 +76,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <motion.div className="absolute inset-0 pointer-events-none" style={{ y: haloY }}>
         {/* Floating geometric shapes */}
         <motion.div
           className="absolute top-[20%] left-[10%] w-20 h-20 border border-indigo-500/20 rounded-lg"
@@ -118,61 +121,54 @@ const Hero = () => {
         <div className="absolute bottom-[20%] left-[5%] text-xs text-purple-500/20 font-mono hidden lg:block">
           {'const passion = "IoT";'}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <motion.div className="relative z-10 max-w-5xl mx-auto text-center" style={{ y: contentY }}>
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <Reveal
           className="mb-6"
+          delay={0.1}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm">
-            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-400/10 border border-emerald-300/25 text-emerald-200 text-sm shadow-[0_0_30px_rgba(16,185,129,0.08)]">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-80 animate-ping" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.95)]" />
+            </span>
             Available for collaboration
           </span>
-        </motion.div>
+        </Reveal>
 
         {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+        <Reveal
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4"
+          delay={0.18}
         >
           <span className="text-white">Hi, I&apos;m </span>
           <span className="gradient-text">Zaheer</span>
-        </motion.h1>
+        </Reveal>
 
         {/* Typing text */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+        <Reveal
           className="text-xl sm:text-2xl md:text-3xl text-slate-400 mb-6 h-12"
+          delay={0.28}
         >
           <span className="typing-cursor">{displayText}</span>
           <span className="w-0.5 h-6 bg-indigo-500 inline-block ml-1 animate-pulse" />
-        </motion.div>
+        </Reveal>
 
         {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+        <Reveal
           className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto mb-10"
+          delay={0.36}
         >
           Designing smart automation, crafting intelligent & connected solutions.
           Building easy-to-use websites and apps from your ideas.
-        </motion.p>
+        </Reveal>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+        <Reveal
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          delay={0.44}
         >
           <motion.a
             href="#contact"
@@ -180,8 +176,10 @@ const Hero = () => {
               e.preventDefault();
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-4 rounded-full btn-gradient text-white font-medium flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
+            data-cursor="button"
+            data-cursor-label="Connect"
+            className="interactive-surface px-8 py-4 rounded-full btn-gradient text-white font-medium flex items-center gap-2"
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             Get in Touch
@@ -189,21 +187,21 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="/resume"
-            className="px-8 py-4 rounded-full border border-slate-700 text-slate-300 font-medium flex items-center gap-2 hover:border-indigo-500/50 hover:text-white transition-all"
-            whileHover={{ scale: 1.05 }}
+            data-cursor="button"
+            data-cursor-label="Resume"
+            className="interactive-surface px-8 py-4 rounded-full border border-slate-700 bg-slate-900/20 text-slate-300 font-medium flex items-center gap-2 hover:border-indigo-500/50 hover:text-white transition-all"
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             <Download size={18} />
             Open Resume
           </motion.a>
-        </motion.div>
+        </Reveal>
 
         {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+        <Reveal
           className="flex items-center justify-center gap-4"
+          delay={0.52}
         >
           {socialLinks.map((social, index) => (
             <motion.a
@@ -211,8 +209,10 @@ const Hero = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all"
-              whileHover={{ scale: 1.1, y: -4 }}
+              data-cursor="button"
+              data-cursor-label={social.label}
+              className="interactive-surface w-12 h-12 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all"
+              whileHover={{ scale: 1.08, y: -5 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -221,8 +221,8 @@ const Hero = () => {
               <social.icon size={20} />
             </motion.a>
           ))}
-        </motion.div>
-      </div>
+        </Reveal>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -233,7 +233,9 @@ const Hero = () => {
       >
         <motion.button
           onClick={scrollToAbout}
-          className="flex flex-col items-center gap-2 text-slate-500 hover:text-indigo-400 transition-colors"
+          data-cursor="button"
+          data-cursor-label="Scroll"
+          className="interactive-surface flex flex-col items-center gap-2 rounded-full px-4 py-3 text-slate-500 hover:text-indigo-400 transition-colors"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
