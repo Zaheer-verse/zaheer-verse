@@ -10,6 +10,8 @@ import Footer from './sections/Footer';
 import ParticlesBackground from './components/ParticlesBackground';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import ResumePage from './pages/ResumePage';
+import PageLoader from './components/PageLoader';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +45,10 @@ function App() {
   };
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-[#0a0a0f] overflow-x-hidden">
+    <div ref={containerRef} className="relative min-h-screen bg-background overflow-x-hidden text-foreground">
+      <PageLoader />
+      <CustomCursor />
+
       {/* Animated background */}
       <motion.div 
         className="fixed inset-0 z-0"
@@ -51,6 +56,7 @@ function App() {
       >
         <div className="absolute inset-0 animated-bg" />
         <div className="absolute inset-0 grid-pattern" />
+        <div className="absolute inset-0 site-radial-bg" />
         <ParticlesBackground />
       </motion.div>
 
@@ -60,6 +66,7 @@ function App() {
           className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+            filter: 'blur(8px)',
           }}
           animate={{
             x: [0, 50, 0],
@@ -75,6 +82,7 @@ function App() {
           className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%)',
+            filter: 'blur(10px)',
           }}
           animate={{
             x: [0, -40, 0],
@@ -90,6 +98,7 @@ function App() {
           className="absolute top-[40%] right-[20%] w-[300px] h-[300px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%)',
+            filter: 'blur(10px)',
           }}
           animate={{
             scale: [1, 1.2, 1],

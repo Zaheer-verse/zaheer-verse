@@ -1,10 +1,16 @@
-import { useRef, type ElementType } from 'react';
+import { type ElementType } from 'react';
 import { motion, useInView, type Variants } from 'framer-motion';
 import { ExternalLink, Cpu, Zap, ArrowRight, Wallet } from 'lucide-react';
 import { projects } from '../data/projects';
+import Reveal from '../components/Reveal';
+import { useScrollDepth } from '../hooks/use-scroll-depth';
 
 const Projects = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+  const { ref: sectionRef, contentStyle, accentStyle, stageStyle } = useScrollDepth<HTMLElement>({
+    distance: 50,
+    tilt: 5,
+    scale: 0.022,
+  });
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const iconMap: Record<string, ElementType> = {
@@ -38,13 +44,14 @@ const Projects = () => {
       ref={sectionRef}
       id="projects"
       className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8"
+      style={stageStyle}
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+      <motion.div
+        className="scroll-depth-layer bottom-20 left-[6%] h-40 w-40 rounded-full bg-[color:var(--hero-glow-alt)]"
+        style={accentStyle}
+      />
+      <motion.div className="max-w-7xl mx-auto scroll-depth-shell" style={contentStyle}>
+        <Reveal
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-4">
@@ -57,9 +64,8 @@ const Projects = () => {
             A showcase of my innovative projects spanning IoT, web development,
             and research in smart automation technologies.
           </p>
-        </motion.div>
+        </Reveal>
 
-        {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -71,11 +77,15 @@ const Projects = () => {
               key={project.title}
               variants={itemVariants}
               className="group relative"
+              data-cursor="card"
+              data-cursor-label={project.title}
+              whileHover={{ y: -10 }}
             >
-              <div className="relative h-full rounded-3xl overflow-hidden bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 transition-all duration-500">
-                {/* Gradient header */}
-                <div className={`h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                  {/* Pattern overlay */}
+              <div className="interactive-surface section-panel relative h-full rounded-3xl overflow-hidden bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 transition-all duration-500">
+                <motion.div
+                  className={`h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+                  whileHover={{ scale: 1.02 }}
+                >
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute inset-0" style={{
                       backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
@@ -83,7 +93,6 @@ const Projects = () => {
                     }} />
                   </div>
                   
-                  {/* Icon */}
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                     <div className="w-20 h-20 rounded-2xl bg-slate-900 flex items-center justify-center shadow-2xl">
                       {(() => {
@@ -93,22 +102,20 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Decorative elements */}
                   <motion.div
                     className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 3, repeat: Infinity }}
                   />
-                </div>
+                </motion.div>
 
-                {/* Content */}
                 <div className="pt-14 pb-6 px-6">
                   <h3 className="text-xl font-bold text-white mb-2 text-center group-hover:text-indigo-300 transition-colors">
                     {project.title}
                   </h3>
                   {project.image && (
-                    <div className="mb-4 rounded-xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
-                      <img src={project.image} alt={project.title} className="w-full h-36 object-cover" />
+                    <div className="image-shell mb-4 rounded-xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
+                      <img src={project.image} alt={project.title} className="w-full h-36 object-cover transition duration-700 group-hover:scale-[1.04]" loading="lazy" />
                     </div>
                   )}
                   <p className="text-slate-400 text-sm text-center mb-4">
@@ -118,7 +125,6 @@ const Projects = () => {
                     {project.longDescription}
                   </p>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
                       <span
@@ -130,14 +136,15 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="flex gap-3">
                     <motion.a
                       href={project.externalUrl ?? `/projects/${project.slug}`}
                       target={project.externalUrl ? '_blank' : undefined}
                       rel={project.externalUrl ? 'noopener noreferrer' : undefined}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-500 text-white text-sm font-medium hover:bg-indigo-600 transition-colors"
-                      whileHover={{ scale: 1.02 }}
+                      data-cursor="button"
+                      data-cursor-label={project.externalUrl ? 'Open Project' : 'View Project'}
+                      className="interactive-surface flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-500 text-white text-sm font-medium hover:bg-indigo-600 transition-colors"
+                      whileHover={{ scale: 1.02, y: -1 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <ExternalLink size={16} />
@@ -146,7 +153,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Hover glow effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5`} />
                 </div>
@@ -155,24 +161,23 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* View All CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
+        <Reveal
           className="text-center mt-12"
+          delay={0.18}
         >
           <motion.a
             href="/resume"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-indigo-500/50 transition-all"
-            whileHover={{ scale: 1.05 }}
+            data-cursor="button"
+            data-cursor-label="Resume"
+            className="interactive-surface inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-700 bg-slate-900/20 text-slate-400 hover:text-white hover:border-indigo-500/50 transition-all"
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             Open Full Resume
             <ArrowRight size={18} />
           </motion.a>
-        </motion.div>
-      </div>
+        </Reveal>
+      </motion.div>
     </section>
   );
 };

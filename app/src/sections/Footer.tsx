@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
+import Reveal from '../components/Reveal';
+import { useScrollDepth } from '../hooks/use-scroll-depth';
 
 const Footer = () => {
+  const { ref: footerRef, contentStyle, stageStyle } = useScrollDepth<HTMLElement>({
+    distance: 26,
+    tilt: 2,
+    scale: 0.01,
+  });
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -53,20 +61,19 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50">
+    <footer
+      ref={footerRef}
+      className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50"
+      style={stageStyle}
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto">
+      <motion.div className="relative max-w-7xl mx-auto scroll-depth-shell" style={contentStyle}>
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <Reveal>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
                   <span className="text-white font-bold text-xl">Z</span>
@@ -84,7 +91,7 @@ const Footer = () => {
                   Open to mentorship, collaboration, and new opportunities.
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           </div>
 
           {/* Links */}
@@ -105,7 +112,9 @@ const Footer = () => {
                       onClick={(e) => handleLinkClick(e, link.href)}
                       target={link.href.startsWith('http') ? '_blank' : undefined}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
+                      data-cursor="button"
+                      data-cursor-label={link.label}
+                      className="interactive-surface rounded-lg px-2 py-1 text-slate-400 hover:text-indigo-400 transition-colors text-sm inline-flex"
                     >
                       {link.label}
                     </a>
@@ -124,34 +133,30 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="pt-8 border-t border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-slate-500 text-sm flex items-center gap-1">
-            &copy; {currentYear} Zaheer-verse. Made with 
-            <Heart className="w-4 h-4 text-red-500 fill-red-500" /> 
-            in Pakistan
+          <p className="text-slate-500 text-sm">
+            &copy; {currentYear} Zaheer-verse. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a href="#" data-cursor="button" data-cursor-label="Privacy" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
+            <a href="#" data-cursor="button" data-cursor-label="Terms" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
               Terms of Service
             </a>
+            <motion.button
+              onClick={scrollToTop}
+              data-cursor="button"
+              data-cursor-label="Back"
+              className="interactive-surface h-11 w-11 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/20 hover:bg-indigo-600 transition-colors"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.92 }}
+            >
+              <ArrowUp size={18} />
+            </motion.button>
           </div>
         </motion.div>
-
-        {/* Scroll to top button */}
-        <motion.button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/30 hover:bg-indigo-600 transition-colors z-40"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <ArrowUp size={20} />
-        </motion.button>
-      </div>
+      </motion.div>
     </footer>
   );
 };

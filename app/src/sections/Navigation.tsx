@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,8 +71,10 @@ const Navigation = () => {
                 e.preventDefault();
                 scrollToSection('home');
               }}
-              className="flex items-center gap-2 group"
-              whileHover={{ scale: 1.02 }}
+              data-cursor="button"
+              className="interactive-surface flex items-center gap-2 rounded-2xl group px-1 py-1"
+              data-cursor-label="Back Home"
+              whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
@@ -88,6 +91,8 @@ const Navigation = () => {
                 <motion.button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
+                  data-cursor="button"
+                  data-cursor-label={link.label}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                     activeSection === link.id
                       ? 'text-indigo-400'
@@ -109,11 +114,14 @@ const Navigation = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center gap-3">
+              <ThemeToggle />
               <motion.a
                 href="/resume"
-                className="px-5 py-2.5 rounded-full btn-gradient text-white text-sm font-medium"
-                whileHover={{ scale: 1.05 }}
+                data-cursor="button"
+                data-cursor-label="Resume"
+                className="interactive-surface px-5 py-2.5 rounded-full btn-gradient text-white text-sm font-medium"
+                whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Resume
@@ -123,6 +131,8 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              data-cursor="button"
+              data-cursor-label="Menu"
               className="md:hidden p-2 rounded-lg bg-slate-800/50 text-white"
               whileTap={{ scale: 0.95 }}
             >
@@ -154,10 +164,15 @@ const Navigation = () => {
               className="absolute right-0 top-0 h-full w-72 glass p-6 pt-20"
             >
               <div className="flex flex-col gap-2">
+                <div className="mb-3">
+                  <ThemeToggle />
+                </div>
                 {navLinks.map((link, index) => (
                   <motion.button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
+                    data-cursor="button"
+                    data-cursor-label={link.label}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -173,10 +188,12 @@ const Navigation = () => {
               </div>
               <motion.button
                 onClick={() => { window.location.href = '/resume'; }}
+                data-cursor="button"
+                data-cursor-label="Resume"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-6 w-full px-5 py-3 rounded-xl btn-gradient text-white font-medium"
+                className="interactive-surface mt-6 w-full px-5 py-3 rounded-xl btn-gradient text-white font-medium"
               >
                 Resume
               </motion.button>

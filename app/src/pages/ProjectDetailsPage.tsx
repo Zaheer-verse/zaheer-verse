@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, PlayCircle, Mail, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 import { findProject } from '../data/projects';
+import Reveal from '../components/Reveal';
+import { useScrollDepth } from '../hooks/use-scroll-depth';
 
 interface Props {
   slug: string;
@@ -18,13 +20,18 @@ const ProjectDetailsPage = ({ slug }: Props) => {
   const project = findProject(slug);
   const [showContacts, setShowContacts] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const { ref: pageRef, contentStyle, accentStyle, stageStyle } = useScrollDepth<HTMLElement>({
+    distance: 34,
+    tilt: 3,
+    scale: 0.014,
+  });
 
   if (!project) {
     return (
       <main className="min-h-screen pt-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
-          <a href="/" className="text-indigo-400 hover:text-indigo-300">
+          <a href="/" data-cursor="button" data-cursor-label="Back" className="text-indigo-400 hover:text-indigo-300">
             Back to Home
           </a>
         </div>
@@ -35,44 +42,56 @@ const ProjectDetailsPage = ({ slug }: Props) => {
   const detail = project.detail;
 
   return (
-    <main className="min-h-screen pt-28 sm:pt-32 px-4 sm:px-6 lg:px-8 pb-16">
-      <div className="max-w-6xl mx-auto">
+    <main
+      ref={pageRef}
+      className="relative min-h-screen pt-28 sm:pt-32 px-4 sm:px-6 lg:px-8 pb-16"
+      style={stageStyle}
+    >
+      <motion.div
+        className="scroll-depth-layer top-28 left-[8%] h-32 w-32 rounded-full bg-[color:var(--hero-glow-alt)]"
+        style={accentStyle}
+      />
+      <motion.div className="max-w-6xl mx-auto scroll-depth-shell" style={contentStyle}>
         <motion.a
           href="/#projects"
-          className="inline-flex items-center gap-2 mb-8 text-slate-300 hover:text-white transition-colors"
+          data-cursor="button"
+          data-cursor-label="Back"
+          className="interactive-surface inline-flex items-center gap-2 rounded-xl px-3 py-2 mb-8 text-slate-300 hover:text-white transition-colors"
           whileHover={{ x: -3 }}
         >
           <ArrowLeft size={18} />
           Back to Projects
         </motion.a>
 
-        <section className="rounded-3xl border border-slate-700/50 bg-slate-900/40 overflow-hidden">
+        <section className="section-panel rounded-3xl border border-slate-700/50 bg-slate-900/40 overflow-hidden shadow-[0_30px_80px_rgba(7,10,22,0.26)]">
           <div className={`h-3 bg-gradient-to-r ${project.gradient}`} />
           <div className="p-6 sm:p-10">
-            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3">{project.title}</h1>
-            {detail?.subtitle && <p className="text-indigo-300 mb-3">{detail.subtitle}</p>}
-            <p className="text-slate-300 text-lg mb-3">{project.description}</p>
-            <p className="text-slate-400 leading-relaxed mb-8">{project.longDescription}</p>
+            <Reveal>
+              <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3">{project.title}</h1>
+              {detail?.subtitle && <p className="text-indigo-300 mb-3">{detail.subtitle}</p>}
+              <p className="text-slate-300 text-lg mb-3">{project.description}</p>
+              <p className="text-slate-400 leading-relaxed mb-8">{project.longDescription}</p>
+            </Reveal>
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <Reveal className="flex flex-wrap gap-2 mb-8" delay={0.06}>
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full text-sm bg-slate-800 border border-slate-700 text-slate-300"
+                  className="interactive-surface px-3 py-1 rounded-full text-sm bg-slate-800 border border-slate-700 text-slate-300"
                 >
                   {tag}
                 </span>
               ))}
-            </div>
+            </Reveal>
 
             {project.image && (
-              <div className="mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
-                <img src={project.image} alt={project.title} className="w-full h-auto object-cover" />
-              </div>
+              <Reveal className="image-shell mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40" delay={0.1}>
+                <img src={project.image} alt={project.title} className="w-full h-auto object-cover transition duration-700 hover:scale-[1.02]" />
+              </Reveal>
             )}
 
             {project.video && (
-              <div className="mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40 p-3">
+              <Reveal className="mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40 p-3" delay={0.12}>
                 {!videoError ? (
                   <video controls playsInline className="w-full rounded-xl" onError={() => setVideoError(true)}>
                     <source src={project.video} type="video/mp4" />
@@ -85,6 +104,8 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                         href={project.video}
                         target="_blank"
                         rel="noopener noreferrer"
+                        data-cursor="button"
+                        data-cursor-label="Open Demo"
                         className="text-indigo-300 hover:text-indigo-200"
                       >
                         Open demo video in a new tab
@@ -92,7 +113,7 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                     </div>
                   </div>
                 )}
-              </div>
+              </Reveal>
             )}
 
             {detail?.intro && (
@@ -404,13 +425,13 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                 <h3 className="text-xl font-semibold text-white mb-3">Project Media and Files</h3>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   {detail.media.filter((m) => m.type === 'image').map((item) => (
-                    <div key={item.src} className="rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
+                    <div key={item.src} data-cursor="card" data-cursor-label={item.label} className="interactive-surface rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
                       <img src={item.src} alt={item.label} className="w-full h-56 object-cover" />
                       <p className="p-3 text-sm text-slate-300">{item.label}</p>
                     </div>
                   ))}
                   {detail.media.filter((m) => m.type === 'video').map((item) => (
-                    <div key={item.src} className="rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
+                    <div key={item.src} data-cursor="card" data-cursor-label={item.label} className="interactive-surface rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40">
                       <video controls playsInline className="w-full h-56 object-cover">
                         <source src={item.src} type="video/mp4" />
                       </video>
@@ -420,6 +441,8 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                           href={item.src}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-cursor="button"
+                          data-cursor-label="Open Demo"
                           className="inline-block mt-2 text-sm text-indigo-300 hover:text-indigo-200"
                         >
                           Open video in new tab
@@ -434,7 +457,9 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                       key={item.src}
                       href={item.src}
                       download
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors"
+                      data-cursor="button"
+                      data-cursor-label="Download"
+                      className="interactive-surface inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors"
                     >
                       <ExternalLink size={14} />
                       {item.label}
@@ -455,7 +480,9 @@ const ProjectDetailsPage = ({ slug }: Props) => {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => setShowContacts((prev) => !prev)}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-gradient text-white font-medium"
+                data-cursor="button"
+                data-cursor-label="Discuss Project"
+                className="interactive-surface inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-gradient text-white font-medium"
               >
                 <ExternalLink size={16} />
                 Discuss This Project
@@ -465,7 +492,9 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                   href={project.video}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-700 text-slate-200 hover:border-indigo-500/40"
+                  data-cursor="button"
+                  data-cursor-label="Open Demo"
+                  className="interactive-surface inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-700 text-slate-200 hover:border-indigo-500/40"
                 >
                   <PlayCircle size={16} />
                   Open Demo Video
@@ -483,7 +512,9 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors"
+                      data-cursor="button"
+                      data-cursor-label={item.label}
+                      className="interactive-surface inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors"
                     >
                       <item.icon size={16} />
                       {item.label}
@@ -494,7 +525,7 @@ const ProjectDetailsPage = ({ slug }: Props) => {
             )}
           </div>
         </section>
-      </div>
+      </motion.div>
     </main>
   );
 };
