@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, PlayCircle, Mail, Linkedin, Instagram, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ExternalLink, PlayCircle, Mail, Linkedin, Instagram, MessageCircle, Github } from 'lucide-react';
 import { findProject } from '../data/projects';
 import Reveal from '../components/Reveal';
 import { useScrollDepth } from '../hooks/use-scroll-depth';
@@ -83,6 +83,13 @@ const ProjectDetailsPage = ({ slug }: Props) => {
                 </span>
               ))}
             </Reveal>
+
+            {project.githubUrl && (
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                className="interactive-surface mb-8 inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-5 py-3 font-medium text-white hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                <Github size={18} aria-hidden="true" /> View on GitHub <ExternalLink size={15} aria-hidden="true" />
+              </a>
+            )}
 
             {project.image && (
               <Reveal className="image-shell mb-8 rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-950/40" delay={0.1}>

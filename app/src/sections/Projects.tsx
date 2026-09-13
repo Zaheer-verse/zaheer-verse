@@ -1,6 +1,6 @@
 import { type ElementType } from 'react';
 import { motion, useInView, type Variants } from 'framer-motion';
-import { ExternalLink, Cpu, Zap, ArrowRight, Wallet } from 'lucide-react';
+import { ExternalLink, Cpu, Zap, ArrowRight, Wallet, Github, Palette, Terminal, GitBranch } from 'lucide-react';
 import { projects } from '../data/projects';
 import Reveal from '../components/Reveal';
 import { useScrollDepth } from '../hooks/use-scroll-depth';
@@ -17,6 +17,9 @@ const Projects = () => {
     'eye-blink-smart-home': Cpu,
     'ev-energy-harvesting': Zap,
     'expense-management-system': Wallet,
+    'designforge': Palette,
+    'deliberate-dev-codex': Terminal,
+    'deliberate-dev-claude': GitBranch,
   };
 
   const containerVariants: Variants = {
@@ -62,7 +65,7 @@ const Projects = () => {
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             A showcase of my innovative projects spanning IoT, web development,
-            and research in smart automation technologies.
+            research, and open-source tools for AI-assisted development.
           </p>
         </Reveal>
 
@@ -109,7 +112,7 @@ const Projects = () => {
                   />
                 </motion.div>
 
-                <div className="pt-14 pb-6 px-6">
+                <div className="pt-14 pb-6 px-6 flex flex-col h-[calc(100%-8rem)]">
                   <h3 className="text-xl font-bold text-white mb-2 text-center group-hover:text-indigo-300 transition-colors">
                     {project.title}
                   </h3>
@@ -136,7 +139,7 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3 mt-auto">
                     <motion.a
                       href={project.externalUrl ?? `/projects/${project.slug}`}
                       target={project.externalUrl ? '_blank' : undefined}
@@ -150,6 +153,13 @@ const Projects = () => {
                       <ExternalLink size={16} />
                       {project.externalUrl ? 'Open Project' : 'View Details'}
                     </motion.a>
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="interactive-surface flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border theme-outline text-theme-primary text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                        <Github size={16} aria-hidden="true" /> GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
 

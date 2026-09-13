@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" fill="none">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#17172f"/></linearGradient></defs>
+<rect width="1400" height="780" rx="36" fill="url(#bg)"/>
+<circle cx="1300" cy="120" r="320" fill="#22d3ee" opacity=".07"/>
+<rect x="90" y="80" width="1220" height="620" rx="26" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<path d="M90 155H1310" stroke="#334155"/>
+<circle cx="130" cy="119" r="7" fill="#f87171"/><circle cx="154" cy="119" r="7" fill="#fbbf24"/><circle cx="178" cy="119" r="7" fill="#34d399"/>
+<text x="235" y="127" fill="#94a3b8" font-family="Arial,sans-serif" font-size="20" letter-spacing="3">CODEX / SOFTWARE DELIVERY</text>
+<text x="150" y="270" fill="#f8fafc" font-family="Arial,sans-serif" font-size="66" font-weight="700">Deliberate Dev</text>
+<text x="150" y="322" fill="#94a3b8" font-family="Arial,sans-serif" font-size="24">A clear process. Work you can review.</text>
+<rect x="150" y="405" width="250" height="164" rx="18" fill="#182338" stroke="#22d3ee"/><text x="173" y="448" fill="#22d3ee" font-family="monospace" font-size="20">01</text><text x="173" y="520" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="27">Clarify</text>
+<rect x="433" y="405" width="250" height="164" rx="18" fill="#182338" stroke="#334155"/><text x="456" y="448" fill="#22d3ee" font-family="monospace" font-size="20">02</text><text x="456" y="520" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="27">Plan</text>
+<rect x="716" y="405" width="250" height="164" rx="18" fill="#182338" stroke="#334155"/><text x="739" y="448" fill="#22d3ee" font-family="monospace" font-size="20">03</text><text x="739" y="520" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="27">Test</text>
+<rect x="999" y="405" width="250" height="164" rx="18" fill="#182338" stroke="#334155"/><text x="1022" y="448" fill="#22d3ee" font-family="monospace" font-size="20">04</text><text x="1022" y="520" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="27">Review</text>
+<text x="150" y="642" fill="#22d3ee" font-family="monospace" font-size="21">OPEN SOURCE</text><text x="1190" y="642" text-anchor="end" fill="#94a3b8" font-family="Arial,sans-serif" font-size="21">Zaheer Yousaf</text>
+</svg>
