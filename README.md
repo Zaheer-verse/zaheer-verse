@@ -1,12 +1,16 @@
-<div align="center">
+from pathlib import Path
 
-<img src="https://avatars.githubusercontent.com/u/224137135?v=4" width="135" alt="Zaheer Yousaf">
+readme = r'''<div align="center">
+
+<img src="https://avatars.githubusercontent.com/u/224137135?v=4" width="130" alt="Zaheer Yousaf">
 
 # Zaheer Yousaf
 
-### Computer Science Student · Developer · IoT Enthusiast
+### Computer Science Student · Software Developer · IoT Enthusiast
 
-I like building things that solve real problems — from web applications and IoT systems to AI developer tools and research projects.
+I build projects to learn, solve real problems, and turn ideas into working systems.
+
+From web applications and IoT prototypes to AI developer tools and engineering research, I like working on things that have a clear purpose and something new for me to learn.
 
 <br>
 
@@ -15,6 +19,9 @@ I like building things that solve real problems — from web applications and Io
 </a>
 <a href="https://www.linkedin.com/in/zaheer-yousaf">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+<a href="https://github.com/Zaheer-verse">
+  <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </a>
 <a href="mailto:zaheery991@gmail.com">
   <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
@@ -32,19 +39,17 @@ I like building things that solve real problems — from web applications and Io
 
 I am a **BS Computer Science student at the University of Sialkot**, based in Daska, Sialkot, Pakistan.
 
-Most of my work is around **web development, IoT, smart automation, AI-assisted software development, and technical research**.
+My main interests are **software development, frontend engineering, IoT, smart automation, AI-assisted development, and technical research**.
 
-I enjoy projects where software is connected with something practical. Sometimes that means building a React application, sometimes working with sensors and an ESP8266, and sometimes researching ideas such as wireless EV charging or improving the way AI coding agents build software.
+I enjoy projects where I can understand the problem first and then build something around it. Sometimes that is a React application, sometimes it is an ESP8266 connected to sensors, and sometimes it is a workflow that helps an AI coding agent build software in a better way.
 
-I try to follow a simple approach:
+I am still learning, but I try not to learn only from tutorials. I prefer building real projects, testing them, finding what is wrong, and improving them.
 
-> Understand the problem first, build the solution carefully, test it properly, and keep improving it.
-
-I am open to **internships, freelance work, research opportunities, open-source collaboration, and interesting software projects**.
+**Currently open to:** internships, freelance work, research opportunities, open-source collaboration, and interesting software projects.
 
 ---
 
-## What I Work With
+## Tech I Work With
 
 <div align="center">
 
@@ -58,33 +63,29 @@ I am open to **internships, freelance work, research opportunities, open-source 
 
 ### Databases & Tools
 
-<img src="https://skillicons.dev/icons?i=mongodb,mysql,git,github,vscode,vercel&theme=dark" alt="Databases and tools">
+<img src="https://skillicons.dev/icons?i=mongodb,mysql,git,github,vscode,vercel&theme=dark" alt="Databases and development tools">
 
 </div>
 
-### Other Technologies
+<br>
 
-`Arduino`
-`NodeMCU`
-`ESP8266`
-`Blynk`
-`IoT`
-`Sensor Integration`
-`Relay Control`
-`Git Worktrees`
-`Test-Driven Development`
-`LaTeX`
-`Overleaf`
-`Responsive Design`
-`Technical Documentation`
+**IoT / Embedded**
+
+`Arduino` `NodeMCU` `ESP8266` `Blynk` `Sensors` `Relay Control` `Embedded C++`
+
+**Software Engineering**
+
+`Git` `Git Worktrees` `TDD` `AI Coding Agents` `Responsive Design` `Accessibility`
+
+**Research & Documentation**
+
+`Technical Research` `IEEE Writing` `LaTeX` `Overleaf` `Documentation` `Presentation`
 
 ---
 
 # Featured Projects
 
-These are some of the projects I have spent the most time learning from and improving.
-
----
+These are the projects that best represent what I like to work on.
 
 <table>
 <tr>
@@ -92,18 +93,19 @@ These are some of the projects I have spent the most time learning from and impr
 
 <h3>Eye-Blink Smart Home</h3>
 
+<a href="https://zaheer-verse.vercel.app/projects/eye-blink-smart-home">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/smart-home-hero.svg" width="100%" alt="Eye Blink Smart Home">
+</a>
 
 <p>
-An assistive smart-home system that allows appliances to be controlled through intentional eye blinks.
+An assistive smart-home system where intentional eye blinks can control electrical appliances.
 </p>
 
 <p>
-IR sensors mounted on wearable glasses detect blink events. A NodeMCU ESP8266 processes them and controls appliances using a relay.
+IR sensors detect blink events, a NodeMCU ESP8266 handles the logic, and a relay controls the connected appliance. I also used Blynk for optional remote interaction.
 </p>
 
 <p>
-<b>Main technologies</b><br>
 <code>ESP8266</code>
 <code>NodeMCU</code>
 <code>C++</code>
@@ -112,39 +114,36 @@ IR sensors mounted on wearable glasses detect blink events. A NodeMCU ESP8266 pr
 <code>IoT</code>
 </p>
 
-<a href="https://zaheer-verse.vercel.app/projects/eye-blink-smart-home">
-<strong>View Project →</strong>
-</a>
+<a href="https://zaheer-verse.vercel.app/projects/eye-blink-smart-home"><b>Project Details →</b></a>
+<br>
+<a href="https://github.com/Zaheer-verse/zaheer-verse/blob/main/app/public/legacy/smarthome_demo.mp4"><b>▶ Watch Demo Video</b></a>
 
 </td>
-
 <td width="50%" valign="top">
 
 <h3>EV Energy Harvesting</h3>
 
+<a href="https://zaheer-verse.vercel.app/projects/ev-energy-harvesting">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/ev-harvesting-hero.svg" width="100%" alt="EV Energy Harvesting">
+</a>
 
 <p>
-A research-focused project exploring dynamic wireless EV charging together with thermal and vibration energy harvesting.
+A research-focused concept combining dynamic wireless EV charging with thermal and vibration energy harvesting.
 </p>
 
 <p>
-The idea is to study how road infrastructure could provide energy to vehicles while also powering low-energy roadside systems.
+The project explores how road infrastructure could transfer energy to moving EVs while also harvesting smaller amounts of energy for roadside electronics and sensing systems.
 </p>
 
 <p>
-<b>Main areas</b><br>
 <code>EV</code>
 <code>Wireless Power</code>
-<code>Energy Harvesting</code>
 <code>Electronics</code>
 <code>IoT</code>
 <code>Research</code>
 </p>
 
-<a href="https://zaheer-verse.vercel.app/projects/ev-energy-harvesting">
-<strong>View Research →</strong>
-</a>
+<a href="https://zaheer-verse.vercel.app/projects/ev-energy-harvesting"><b>View Research →</b></a>
 
 </td>
 </tr>
@@ -158,18 +157,19 @@ The idea is to study how road infrastructure could provide energy to vehicles wh
 
 <h3>Expense Management System</h3>
 
+<a href="https://expencemanagment.vercel.app/">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/expense-management-hero.svg" width="100%" alt="Expense Management System">
+</a>
 
 <p>
-A web application for tracking expenses, budgets, transactions, and monthly financial activity.
+A student-focused expense management application for tracking expenses, budgets, transactions, and monthly financial activity.
 </p>
 
 <p>
-I built it around a clean dashboard so users can understand their spending without making the interface complicated.
+I focused on keeping the dashboard simple so the important financial information stays easy to understand.
 </p>
 
 <p>
-<b>Main technologies</b><br>
 <code>React</code>
 <code>TypeScript</code>
 <code>Charts</code>
@@ -177,47 +177,38 @@ I built it around a clean dashboard so users can understand their spending witho
 <code>Responsive UI</code>
 </p>
 
-<a href="https://expencemanagment.vercel.app/">
-<strong>Live Demo →</strong>
-</a>
+<a href="https://expencemanagment.vercel.app/"><b>Live Demo →</b></a>
 &nbsp; · &nbsp;
-<a href="https://github.com/Zaheer-verse/expense-management-system">
-<strong>Repository →</strong>
-</a>
+<a href="https://github.com/Zaheer-verse/expense-management-system"><b>Repository →</b></a>
 
 </td>
-
 <td width="50%" valign="top">
 
 <h3>DesignForge</h3>
 
+<a href="https://github.com/Zaheer-verse/DesignForge">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/designforge-hero.svg" width="100%" alt="DesignForge">
+</a>
 
 <p>
-DesignForge is an open-source design and frontend workflow made for AI coding agents.
+DesignForge is an open-source design-engineering workflow for AI coding agents.
 </p>
 
 <p>
-It helps an agent think about the product, users, visual direction, responsive design, accessibility, implementation, and final review before simply generating UI code.
+I built it to make an agent think about the product, audience, visual direction, responsive behavior, accessibility, implementation, and final review before it starts producing UI code.
 </p>
 
 <p>
-<b>Main areas</b><br>
 <code>AI Agents</code>
 <code>UI/UX</code>
 <code>Accessibility</code>
-<code>Frontend</code>
 <code>Python</code>
 <code>Open Source</code>
 </p>
 
-<a href="https://github.com/Zaheer-verse/DesignForge">
-<strong>Repository →</strong>
-</a>
+<a href="https://github.com/Zaheer-verse/DesignForge"><b>Repository →</b></a>
 &nbsp; · &nbsp;
-<a href="https://zaheer-verse.vercel.app/projects/designforge">
-<strong>Project Details →</strong>
-</a>
+<a href="https://zaheer-verse.vercel.app/projects/designforge"><b>Details →</b></a>
 
 </td>
 </tr>
@@ -231,18 +222,19 @@ It helps an agent think about the product, users, visual direction, responsive d
 
 <h3>Deliberate Dev · Codex</h3>
 
+<a href="https://github.com/Zaheer-verse/deliberate-dev-codex">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-codex-hero.svg" width="100%" alt="Deliberate Dev Codex">
+</a>
 
 <p>
-A development workflow for Codex that helps turn a rough software idea into smaller, testable, and reviewable tasks.
+A structured development workflow for Codex that takes a rough software idea and turns it into smaller, testable, reviewable tasks.
 </p>
 
 <p>
-The workflow focuses on understanding requirements first, writing tests before implementation, using isolated Git worktrees, and reviewing the final result before delivery.
+The workflow focuses on understanding the request first, writing tests before implementation, using isolated Git worktrees, and reviewing the result before delivery.
 </p>
 
 <p>
-<b>Main technologies</b><br>
 <code>Codex</code>
 <code>Python</code>
 <code>TDD</code>
@@ -251,32 +243,28 @@ The workflow focuses on understanding requirements first, writing tests before i
 <code>QA</code>
 </p>
 
-<a href="https://github.com/Zaheer-verse/deliberate-dev-codex">
-<strong>Repository →</strong>
-</a>
+<a href="https://github.com/Zaheer-verse/deliberate-dev-codex"><b>Repository →</b></a>
 &nbsp; · &nbsp;
-<a href="https://zaheer-verse.vercel.app/projects/deliberate-dev-codex">
-<strong>Project Details →</strong>
-</a>
+<a href="https://zaheer-verse.vercel.app/projects/deliberate-dev-codex"><b>Details →</b></a>
 
 </td>
-
 <td width="50%" valign="top">
 
 <h3>Deliberate Dev · Claude Code</h3>
 
+<a href="https://github.com/Zaheer-verse/deliberate-dev-claude">
 <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-claude-hero.svg" width="100%" alt="Deliberate Dev Claude Code">
+</a>
 
 <p>
-The Claude Code version of Deliberate Dev, built around the same structured software-development approach.
+The Claude Code edition of Deliberate Dev, built around the same idea of making AI-assisted software development more structured and reviewable.
 </p>
 
 <p>
-It combines requirement discovery, task planning, test-first development, isolated worktrees, review, and final verification inside a Claude Code plugin workflow.
+It combines requirement discovery, task planning, test-first implementation, isolated worktrees, engineering review, and final verification inside a Claude Code plugin workflow.
 </p>
 
 <p>
-<b>Main technologies</b><br>
 <code>Claude Code</code>
 <code>AI Agents</code>
 <code>Python</code>
@@ -285,13 +273,9 @@ It combines requirement discovery, task planning, test-first development, isolat
 <code>Software Engineering</code>
 </p>
 
-<a href="https://github.com/Zaheer-verse/deliberate-dev-claude">
-<strong>Repository →</strong>
-</a>
+<a href="https://github.com/Zaheer-verse/deliberate-dev-claude"><b>Repository →</b></a>
 &nbsp; · &nbsp;
-<a href="https://zaheer-verse.vercel.app/projects/deliberate-dev-claude">
-<strong>Project Details →</strong>
-</a>
+<a href="https://zaheer-verse.vercel.app/projects/deliberate-dev-claude"><b>Details →</b></a>
 
 </td>
 </tr>
@@ -299,21 +283,84 @@ It combines requirement discovery, task planning, test-first development, isolat
 
 ---
 
-## How I Usually Build
+# Project Demo
 
-I have started focusing more on the process behind a project, not only the final interface.
+GitHub profile READMEs do not reliably support embedded MP4 players, so I keep the video as a clickable demo instead of using a broken `<video>` element.
 
-My general workflow is:
+<div align="center">
 
-**Idea → Research → Requirements → Design → Build → Test → Review → Improve**
+### Eye-Blink Smart Home — Hardware Demo
 
-For software projects, I prefer breaking large features into smaller tasks and checking them one by one.
+<a href="https://github.com/Zaheer-verse/zaheer-verse/blob/main/app/public/legacy/smarthome_demo.mp4">
+  <img src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/legacy/smarthome.png" width="78%" alt="Eye Blink Smart Home Demo">
+</a>
 
-For hardware and research projects, I normally start with the problem, study existing approaches, build a small prototype, test what works, and then document the results.
+<br>
+
+<a href="https://github.com/Zaheer-verse/zaheer-verse/blob/main/app/public/legacy/smarthome_demo.mp4">
+  <img src="https://img.shields.io/badge/▶_WATCH-DEMO_VIDEO-0B3D91?style=for-the-badge" alt="Watch demo video">
+</a>
+
+<p><i>Click the preview to open the real project demo.</i></p>
+
+</div>
+
+<!--
+When I add more project demo videos, I can place them here using the same pattern:
+1. Use a project screenshot or hero image as the preview.
+2. Link that image to the GitHub video file or YouTube demo.
+This keeps the README reliable and avoids unsupported video HTML.
+-->
 
 ---
 
-## Areas I Am Exploring
+# GitHub Contributions
+
+I have been trying to keep my GitHub focused on actual projects instead of only practice repositories. I use it to document what I build, improve older work, and make some of my tools available as open source.
+
+<div align="center">
+
+<a href="https://github.com/Zaheer-verse">
+  <img src="https://ghchart.rshah.org/0B3D91/Zaheer-verse" width="100%" alt="Zaheer Yousaf GitHub contribution chart">
+</a>
+
+<br><br>
+
+<a href="https://github.com/Zaheer-verse">
+  <img src="https://img.shields.io/badge/View_Full-GitHub_Activity-181717?style=for-the-badge&logo=github&logoColor=white" alt="View GitHub activity">
+</a>
+
+</div>
+
+### Open-Source Work
+
+| Project | What I am working on |
+| --- | --- |
+| [DesignForge](https://github.com/Zaheer-verse/DesignForge) | Design, accessibility, responsive QA, and frontend reasoning for AI coding agents |
+| [Deliberate Dev · Codex](https://github.com/Zaheer-verse/deliberate-dev-codex) | Structured test-first software workflow for Codex |
+| [Deliberate Dev · Claude](https://github.com/Zaheer-verse/deliberate-dev-claude) | Claude Code plugin for planning, TDD, worktrees, review, and verification |
+| [Expense Management System](https://github.com/Zaheer-verse/expense-management-system) | React/TypeScript expense tracking and dashboard work |
+| [Zaheer-verse](https://github.com/Zaheer-verse/zaheer-verse) | My portfolio, project documentation, and project showcase |
+
+---
+
+## How I Usually Build
+
+My approach has changed as I have worked on more projects.
+
+I try not to jump directly into coding now.
+
+**Understand → Research → Plan → Build → Test → Review → Improve**
+
+For software projects, I prefer breaking a big feature into smaller tasks and checking each part properly.
+
+For IoT and research projects, I normally start from the problem, study existing approaches, make a prototype, test it, and document what I learn.
+
+For AI-assisted development, I am especially interested in making the agent understand the task before it starts coding.
+
+---
+
+## What I Am Learning
 
 <table>
 <tr>
@@ -321,38 +368,36 @@ For hardware and research projects, I normally start with the problem, study exi
 
 ### Software
 
-* React
-* TypeScript
-* Full-stack concepts
-* Software architecture
-* Testing
-* Developer tools
+- React
+- TypeScript
+- Software architecture
+- Testing
+- Developer tooling
+- Better UI engineering
 
 </td>
-
 <td width="33%" valign="top">
 
 ### AI & Computing
 
-* Machine Learning
-* AI coding agents
-* Cloud Computing
-* Cybersecurity
-* Distributed Systems
-* Blockchain
+- Machine Learning
+- AI coding agents
+- Cloud Computing
+- Cybersecurity
+- Distributed Systems
+- Blockchain
 
 </td>
-
 <td width="33%" valign="top">
 
-### Hardware & Research
+### IoT & Research
 
-* Internet of Things
-* Assistive technology
-* Wireless charging
-* Energy harvesting
-* Smart automation
-* EV infrastructure
+- Internet of Things
+- Assistive technology
+- Smart automation
+- Wireless charging
+- Energy harvesting
+- EV infrastructure
 
 </td>
 </tr>
@@ -360,43 +405,15 @@ For hardware and research projects, I normally start with the problem, study exi
 
 ---
 
-## More From My GitHub
-
-<div align="center">
-
-<a href="https://github.com/Zaheer-verse/DesignForge">
-<img src="https://img.shields.io/badge/DesignForge-Repository-181717?style=for-the-badge&logo=github" alt="DesignForge">
-</a>
-
-<a href="https://github.com/Zaheer-verse/deliberate-dev-codex">
-<img src="https://img.shields.io/badge/Deliberate_Dev-Codex-181717?style=for-the-badge&logo=github" alt="Deliberate Dev Codex">
-</a>
-
-<a href="https://github.com/Zaheer-verse/deliberate-dev-claude">
-<img src="https://img.shields.io/badge/Deliberate_Dev-Claude-181717?style=for-the-badge&logo=github" alt="Deliberate Dev Claude">
-</a>
-
-<br><br>
-
-<a href="https://github.com/Zaheer-verse/expense-management-system">
-<img src="https://img.shields.io/badge/Expense_Management-Repository-181717?style=for-the-badge&logo=github" alt="Expense Management">
-</a>
-
-<a href="https://github.com/Zaheer-verse/Zam-zam-pizza">
-<img src="https://img.shields.io/badge/Zam_Zam_Pizza-Repository-181717?style=for-the-badge&logo=github" alt="Zam Zam Pizza">
-</a>
-
-</div>
-
----
-
 ## A Little More About Me
 
-I have worked on academic projects, personal projects, research concepts, frontend interfaces, IoT prototypes, and developer tools.
+I have worked on academic projects, personal projects, frontend interfaces, IoT prototypes, research concepts, and developer tools.
 
-I am still learning, and I like that part of computer science. Every project teaches me something different — sometimes about code, sometimes about hardware, and sometimes about how the original idea itself should be improved.
+I like trying different areas because every project teaches me something different.
 
-My main goal is to keep building projects that are actually useful and to become better at turning an idea into a complete working system.
+The Eye-Blink Smart Home taught me a lot about hardware reliability and practical interaction. The EV project pushed me more toward research. My web projects improved my frontend skills, while DesignForge and Deliberate Dev made me think more seriously about how software should be planned, tested, and reviewed.
+
+My goal is simple: **keep building useful things and become better at taking an idea from the first thought to a complete working system.**
 
 ---
 
@@ -405,7 +422,7 @@ My main goal is to keep building projects that are actually useful and to become
 <div align="center">
 
 <a href="https://zaheer-verse.vercel.app/">
-  <img src="https://img.shields.io/badge/Portfolio-zaheer--verse-0B3D91?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio">
+  <img src="https://img.shields.io/badge/Portfolio-Zaheer--verse-0B3D91?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio">
 </a>
 
 <a href="https://www.linkedin.com/in/zaheer-yousaf">
@@ -413,7 +430,7 @@ My main goal is to keep building projects that are actually useful and to become
 </a>
 
 <a href="mailto:zaheery991@gmail.com">
-  <img src="https://img.shields.io/badge/Email-zaheery991-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
 </a>
 
 <a href="https://wa.me/923335398292">
@@ -422,12 +439,15 @@ My main goal is to keep building projects that are actually useful and to become
 
 <br><br>
 
-### Zaheer Yousaf
-
-`Computer Science · Web Development · IoT · AI Tools · Research`
+**Computer Science · Software Development · IoT · AI Tools · Research**
 
 <br>
 
-**Building, learning, testing, and improving — one project at a time.**
+*Building, testing, learning, and improving — one project at a time.*
 
 </div>
+'''
+
+out = Path('/mnt/data/Zaheer-GitHub-README.md')
+out.write_text(readme, encoding='utf-8')
+print(f"Created {out} with {len(readme.splitlines())} lines.")
