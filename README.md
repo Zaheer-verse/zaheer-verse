@@ -1,8 +1,10 @@
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0B3D91,50:1E3A8A,100:111827&height=180&section=header&animation=fadeIn" alt="" />
+
 <div align="center">
 
 # Hi, I'm Zaheer 👋
 
-*Computer science student who likes it when software leaves the screen — sensors, microcontrollers, AI agents, and the occasional research paper.*
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&pause=1000&color=7AA2F7&center=true&vCenter=true&width=600&lines=Computer+Science+Student;Building+IoT+%26+Embedded+Systems;Exploring+AI+Coding+Agents;EV+%26+Energy+Research" alt="Typing SVG" />
 
 <a href="https://zaheer-verse.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0B3D91?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
 <a href="https://www.linkedin.com/in/zaheer-yousaf"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -57,6 +59,9 @@ Six projects that span both sides of what I do — web software, physical system
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/smart-home-hero.svg" alt="Eye Blink Smart Home hero graphic" />
 
+<!-- Got a demo clip of this actually turning a lamp on/off? Drag it into a GitHub comment box to get a hosted URL, then drop it in here:
+<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+
 A hands-free home automation setup built on a simple idea: your blink is a switch. Wearable infrared sensors pick up intentional blinks, a NodeMCU ESP8266 tells them apart from ordinary ones, and relays take it from there to control connected appliances. It's built to keep working locally without depending on the cloud, with Blynk layered on top for optional remote monitoring — designed with users who have limited mobility in mind.
 
 `ESP8266` `NodeMCU` `Arduino` `C++` `TCRT5000` `Relay Control` `Blynk`
@@ -64,6 +69,9 @@ A hands-free home automation setup built on a simple idea: your blink is a switc
 ### ⚡ EV Energy Harvesting
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/ev-harvesting-hero.svg" alt="EV Energy Harvesting hero graphic" />
+
+<!-- A render or simulation clip would sell this one well. Same trick: drag it into a GitHub comment box, then:
+<video src="PASTE_URL_HERE" controls width="100%"></video> -->
 
 A research concept for roads that do more than sit there: charging electric vehicles as they drive over resonant inductive coils, while also pulling extra power out of the road itself — heat through thermoelectric generators, vibration through piezoelectric elements. The write-up focuses on coupling efficiency, alignment tolerance, and how the harvested energy could realistically feed a roadside sensor network.
 
@@ -92,6 +100,10 @@ flowchart LR
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/expense-management-hero.svg" alt="Expense Management System hero graphic" />
 
+<!-- A screen recording of the dashboard in use is the strongest thing you could put here:
+<video src="PASTE_URL_HERE" controls width="100%"></video>
+or a looping GIF: <img width="100%" src="PASTE_URL_HERE" alt="Expense Management System demo" /> -->
+
 A personal finance dashboard for everyday spending, built in React and TypeScript — categorized transactions, budgets, monthly summaries, and charts that make the numbers legible at a glance. It's a full CRUD app with a responsive UI, aimed more at being genuinely usable than feature-stacked.
 
 `React` `TypeScript` `Dashboard UI` `Charts` `CRUD` `Responsive Design`
@@ -101,6 +113,9 @@ A personal finance dashboard for everyday spending, built in React and TypeScrip
 ### 🧩 DesignForge
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/designforge-hero.svg" alt="DesignForge hero graphic" />
+
+<!-- A terminal recording of an agent running through the workflow would be great here:
+<video src="PASTE_URL_HERE" controls width="100%"></video> -->
 
 An open-source skill that stops AI coding agents from jumping straight to code. Before a single component gets written, it walks the agent through product discovery, content hierarchy, and an actual visual system, then checks the result against responsiveness, accessibility — contrast, focus states, keyboard navigation, reduced motion — and deployment readiness.
 
@@ -122,6 +137,9 @@ flowchart LR
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-codex-hero.svg" alt="Deliberate Dev Codex hero graphic" />
 
+<!-- Same idea — a short terminal capture of a run going through the pipeline:
+<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+
 A structured delivery workflow for Codex that treats "build this feature" as more than one big prompt. It clarifies what's actually being asked for, breaks it into small tasks with acceptance criteria, writes the failing test before any implementation, works each task in its own isolated Git worktree, and won't call something done without a security and correctness review plus real execution evidence.
 
 <details>
@@ -141,6 +159,9 @@ flowchart LR
 ### 🔁 Deliberate Dev · Claude Code
 
 <img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-claude-hero.svg" alt="Deliberate Dev Claude Code hero graphic" />
+
+<!-- Same idea again:
+<video src="PASTE_URL_HERE" controls width="100%"></video> -->
 
 The same discipline, rebuilt as a native Claude Code plugin: a main workflow coordinator, six specialized engineering skills, and namespaced commands that take a vague request through discovery, planning, isolated test-first implementation, review, and verification, with blockers reported explicitly instead of quietly skipped. Distributed through the GitHub Marketplace.
 
@@ -190,7 +211,58 @@ The numbers, for what they're worth:
 
 <img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zaheer-verse&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Zaheer's most-used languages" />
 
+<br/><br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=Zaheer-verse&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" alt="GitHub trophies" />
+
 </div>
+
+<details>
+<summary>🐍 Want the animated contribution snake too?</summary>
+<br/>
+
+It's one of the best-looking things you can put on a profile, but it can't be generated from a plain URL — it has to run as a GitHub Action in your own repo, on a schedule, so it can read your live contribution graph. One-time setup:
+
+1. In your `Zaheer-verse/Zaheer-verse` repo, add this as `.github/workflows/snake.yml`:
+
+```yaml
+name: generate-snake-animation
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: Zaheer-verse
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+2. Go to the **Actions** tab and run it once manually (it'll also run automatically every night after that).
+3. Once it's generated the files, add this anywhere in the README:
+
+```html
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zaheer-verse/Zaheer-verse/output/snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/Zaheer-verse/Zaheer-verse/output/snake.svg" alt="Contribution snake animation" />
+</picture>
+```
+
+</details>
 
 ---
 
@@ -205,3 +277,5 @@ The quickest way to reach me is by [email](mailto:zaheery991@gmail.com), or on [
 *"Ideas become valuable when they survive the journey from imagination to implementation."*
 
 </div>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,50:1E3A8A,100:0B3D91&height=120&section=footer&animation=fadeIn" alt="" />
