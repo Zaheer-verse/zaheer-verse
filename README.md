@@ -221,46 +221,8 @@ The numbers, for what they're worth:
 <summary>🐍 Want the animated contribution snake too?</summary>
 <br/>
 
-It's one of the best-looking things you can put on a profile, but it can't be generated from a plain URL — it has to run as a GitHub Action in your own repo, on a schedule, so it can read your live contribution graph. One-time setup:
+ 
 
-1. In your `Zaheer-verse/Zaheer-verse` repo, add this as `.github/workflows/snake.yml`:
-
-```yaml
-name: generate-snake-animation
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: Zaheer-verse
-          outputs: |
-            dist/snake.svg
-            dist/snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-2. Go to the **Actions** tab and run it once manually (it'll also run automatically every night after that).
-3. Once it's generated the files, add this anywhere in the README:
-
-```html
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zaheer-verse/Zaheer-verse/output/snake-dark.svg" />
-  <img src="https://raw.githubusercontent.com/Zaheer-verse/Zaheer-verse/output/snake.svg" alt="Contribution snake animation" />
-</picture>
-```
 
 </details>
 
