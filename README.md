@@ -1,89 +1,134 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0B3D91,50:1E3A8A,100:111827&height=180&section=header&animation=fadeIn" alt="" />
+from pathlib import Path
 
-<div align="center">
+readme = r'''<div align="center">
 
-# Hi, I'm Zaheer 👋
+<!-- Premium terminal-style hero -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./light.svg">
+  <img src="./dark.svg" width="100%" alt="Zaheer Yousaf — Computer Science Student, IoT Developer, Web Developer and AI Developer Tools Builder">
+</picture>
 
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&pause=1000&color=7AA2F7&center=true&vCenter=true&width=600&lines=Computer+Science+Student;Building+IoT+%26+Embedded+Systems;Exploring+AI+Coding+Agents;EV+%26+Energy+Research" alt="Typing SVG" />
+<br/>
 
-<a href="https://zaheer-verse.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0B3D91?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/zaheer-yousaf"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://github.com/Zaheer-verse"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-<a href="mailto:zaheery991@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://zaheer-verse.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-0B3D91?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio">
+</a>
+<a href="https://www.linkedin.com/in/zaheer-yousaf">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+<a href="https://github.com/Zaheer-verse">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</a>
+<a href="mailto:zaheery991@gmail.com">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
 
 </div>
 
 ---
 
-## About me
+## `SYSTEM.INFO`
 
-I'm a computer science student at the University of Sialkot, based in Daska, Pakistan — about three years into writing code across a mix of academic and independent projects.
+```text
+> NAME        Zaheer Yousaf
+> ROLE        Computer Science Student · IoT Developer · Web Developer
+> LOCATION    Daska, Sialkot, Pakistan
+> EDUCATION   BS Computer Science — University of Sialkot
+> FOCUS       IoT · AI Developer Tools · Web Engineering · EV & Energy Research
+> BUILDING    Practical systems that connect software, hardware, automation, and research
+```
 
-Most of that time splits between two things that don't always overlap: building web software with React and TypeScript, and building things that touch the physical world — sensors, microcontrollers, relays, the odd energy-harvesting circuit. Lately a third interest has been eating into both: AI coding agents, and specifically the scaffolding around them — skills and workflows that make an agent slow down, ask the right questions, and test what it ships instead of guessing.
+I’m a **BS Computer Science student at the University of Sialkot** working across web development, IoT, embedded systems, AI-assisted software engineering, and research-driven technical projects.
 
-I'd rather ship something small I can explain end-to-end — why it exists, who it's for, how it fails, how it's tested — than something impressive I can't. That thread runs through everything below, from a blink-controlled light switch to a plugin that makes Claude Code write tests before it writes features.
+My work usually sits between two worlds: **software that runs on the screen** and **systems that interact with the physical world**. I enjoy taking an idea from the first rough concept to something I can explain, test, demonstrate, and improve.
 
-Currently reading up on distributed systems, cloud infrastructure, and cybersecurity, mostly because my IoT projects keep running into all three. Blockchain's on the list too, more out of curiosity than any concrete plan for it yet.
-
----
-
-## 🧰 What I work with
-
-A quick rundown of what I reach for most:
-
-**Languages**
-
-<img src="https://skillicons.dev/icons?i=c,cpp,python,js,ts,html,css&theme=dark" alt="C, C++, Python, JavaScript, TypeScript, HTML, CSS" />
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs&theme=dark" alt="React, Vite, Tailwind CSS, Node.js" />
-
-**Data & tools**
-
-<img src="https://skillicons.dev/icons?i=mongodb,mysql,git,github,vscode,vercel&theme=dark" alt="MongoDB, MySQL, Git, GitHub, VS Code, Vercel" />
-
-**Embedded & IoT**
-
-`Arduino` `ESP8266` `NodeMCU` `Blynk` `Sensor Integration` `Relay Control`
-
-I also lean on test-driven development, isolated Git worktrees, and lately my own AI coding agent skills — plus IEEE-style technical writing in LaTeX and Overleaf for the research side.
+More recently, I’ve also been exploring **AI coding-agent workflows** — especially systems that make agents clarify requirements, split work into smaller tasks, write tests before implementation, use isolated Git worktrees, and verify the result before calling it complete.
 
 ---
 
-## 🚀 Things I've built
+## `CURRENT.FOCUS`
 
-Six projects that span both sides of what I do — web software, physical systems, and lately a couple of tools for AI agents themselves.
+```text
+[01] IoT & Embedded Systems
+[02] AI Coding Agents & Developer Workflows
+[03] React / TypeScript Web Applications
+[04] EV Wireless Charging & Road Energy Harvesting
+[05] Distributed Systems, Cloud & Cybersecurity
+```
 
-### 👁️ Eye-Blink Smart Home
+I prefer building projects with a clear purpose, understandable architecture, and enough structure that I can explain **why it exists, how it works, where it can fail, and how I would test it**.
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/smart-home-hero.svg" alt="Eye Blink Smart Home hero graphic" />
+---
 
-<!-- Got a demo clip of this actually turning a lamp on/off? Drag it into a GitHub comment box to get a hosted URL, then drop it in here:
-<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+## `ENGINEERING.STACK`
 
-A hands-free home automation setup built on a simple idea: your blink is a switch. Wearable infrared sensors pick up intentional blinks, a NodeMCU ESP8266 tells them apart from ordinary ones, and relays take it from there to control connected appliances. It's built to keep working locally without depending on the cloud, with Blynk layered on top for optional remote monitoring — designed with users who have limited mobility in mind.
+### Languages
+
+<p>
+  <img src="https://skillicons.dev/icons?i=c,cpp,python,js,ts,html,css&theme=dark" alt="C, C++, Python, JavaScript, TypeScript, HTML, CSS">
+</p>
+
+`C` `C++` `Python` `JavaScript` `TypeScript` `HTML` `CSS`
+
+### Frontend & Web
+
+<p>
+  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs&theme=dark" alt="React, Vite, Tailwind CSS, Node.js">
+</p>
+
+`React` `Vite` `Tailwind CSS` `Node.js` `Responsive UI`
+
+### Databases & Development Tools
+
+<p>
+  <img src="https://skillicons.dev/icons?i=mongodb,mysql,git,github,vscode,vercel&theme=dark" alt="MongoDB, MySQL, Git, GitHub, VS Code, Vercel">
+</p>
+
+`MongoDB` `MySQL` `Git` `GitHub` `VS Code` `Vercel`
+
+### Embedded & IoT
+
+`ESP8266` `NodeMCU` `Arduino` `Blynk` `TCRT5000` `Sensor Integration` `Relay Control`
+
+### Engineering Workflow
+
+`Test-Driven Development` `Git Worktrees` `QA` `Security Review` `AI Agent Skills` `LaTeX` `Overleaf`
+
+---
+
+## `FEATURED.PROJECTS`
+
+### `01 / Eye-Blink Smart Home`
+
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/smart-home-hero.svg" alt="Eye Blink Smart Home hero graphic">
+
+A hands-free smart-home system where intentional eye blinks act as controls for connected appliances. Infrared sensors detect blink input, a **NodeMCU ESP8266** processes the interaction, relays control appliances, and **Blynk** provides optional remote monitoring.
+
+The project is designed around assistive interaction and local hardware control, so the core system can continue operating without depending entirely on cloud connectivity.
 
 `ESP8266` `NodeMCU` `Arduino` `C++` `TCRT5000` `Relay Control` `Blynk`
 
-### ⚡ EV Energy Harvesting
+---
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/ev-harvesting-hero.svg" alt="EV Energy Harvesting hero graphic" />
+### `02 / EV Energy Harvesting`
 
-<!-- A render or simulation clip would sell this one well. Same trick: drag it into a GitHub comment box, then:
-<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/ev-harvesting-hero.svg" alt="EV Energy Harvesting hero graphic">
 
-A research concept for roads that do more than sit there: charging electric vehicles as they drive over resonant inductive coils, while also pulling extra power out of the road itself — heat through thermoelectric generators, vibration through piezoelectric elements. The write-up focuses on coupling efficiency, alignment tolerance, and how the harvested energy could realistically feed a roadside sensor network.
+A research concept combining **dynamic wireless EV charging** with road-based energy harvesting.
+
+The design explores resonant inductive charging coils embedded in the road while also studying how road heat and vibration could be harvested through **thermoelectric generators** and **piezoelectric elements**.
 
 <details>
-<summary>See the architecture</summary>
+<summary><strong>View architecture</strong></summary>
 
 ```mermaid
 flowchart LR
     subgraph Charging
         A[Grid] --> B[Inverter] --> C[Road Coils]
-        C -->|wireless| D[Vehicle Coil] --> E[Battery]
+        C -->|Wireless Power| D[Vehicle Coil] --> E[Battery]
     end
+
     subgraph Harvesting
         F[Road Heat] --> G[Thermoelectric]
         H[Vibration] --> I[Piezoelectric]
@@ -96,148 +141,215 @@ flowchart LR
 
 `EV Systems` `Wireless Power` `Resonant Coupling` `Thermoelectric` `Piezoelectric` `LaTeX`
 
-### 💸 Expense Management System
+---
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/expense-management-hero.svg" alt="Expense Management System hero graphic" />
+### `03 / Expense Management System`
 
-<!-- A screen recording of the dashboard in use is the strongest thing you could put here:
-<video src="PASTE_URL_HERE" controls width="100%"></video>
-or a looping GIF: <img width="100%" src="PASTE_URL_HERE" alt="Expense Management System demo" /> -->
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/expense-management-hero.svg" alt="Expense Management System hero graphic">
 
-A personal finance dashboard for everyday spending, built in React and TypeScript — categorized transactions, budgets, monthly summaries, and charts that make the numbers legible at a glance. It's a full CRUD app with a responsive UI, aimed more at being genuinely usable than feature-stacked.
+A responsive personal-finance dashboard built with **React and TypeScript** for managing categorized transactions, budgets, monthly summaries, and visual spending insights.
+
+The project focuses on practical usability, clean CRUD workflows, and readable financial information instead of unnecessary feature overload.
 
 `React` `TypeScript` `Dashboard UI` `Charts` `CRUD` `Responsive Design`
 
-*Repo:* [`Zaheer-verse/expense-management-system`](https://github.com/Zaheer-verse/expense-management-system)
+**Repository:** [Zaheer-verse/expense-management-system](https://github.com/Zaheer-verse/expense-management-system)
 
-### 🧩 DesignForge
+---
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/designforge-hero.svg" alt="DesignForge hero graphic" />
+### `04 / DesignForge`
 
-<!-- A terminal recording of an agent running through the workflow would be great here:
-<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/designforge-hero.svg" alt="DesignForge hero graphic">
 
-An open-source skill that stops AI coding agents from jumping straight to code. Before a single component gets written, it walks the agent through product discovery, content hierarchy, and an actual visual system, then checks the result against responsiveness, accessibility — contrast, focus states, keyboard navigation, reduced motion — and deployment readiness.
+An open-source workflow skill for AI coding agents that pushes the agent to understand the product before immediately writing code.
+
+It guides the agent through discovery, content hierarchy, visual-system planning, implementation, responsiveness, accessibility checks, and deployment-readiness review.
 
 <details>
-<summary>See the workflow</summary>
+<summary><strong>View workflow</strong></summary>
 
 ```mermaid
 flowchart LR
-    A[Idea] --> B[Discovery] --> C[Content Hierarchy] --> D[Visual System] --> E[Build] --> F[Responsive + A11y QA] --> G[Ship]
+    A[Idea] --> B[Discovery]
+    B --> C[Content Hierarchy]
+    C --> D[Visual System]
+    D --> E[Build]
+    E --> F[Responsive + A11y QA]
+    F --> G[Ship]
 ```
 
 </details>
 
 `AI Agents` `UI/UX` `Accessibility` `Python` `Open Source`
 
-*Repo:* [`Zaheer-verse/DesignForge`](https://github.com/Zaheer-verse/DesignForge)
+**Repository:** [Zaheer-verse/DesignForge](https://github.com/Zaheer-verse/DesignForge)
 
-### 🧪 Deliberate Dev · Codex
+---
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-codex-hero.svg" alt="Deliberate Dev Codex hero graphic" />
+### `05 / Deliberate Dev · Codex`
 
-<!-- Same idea — a short terminal capture of a run going through the pipeline:
-<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-codex-hero.svg" alt="Deliberate Dev Codex hero graphic">
 
-A structured delivery workflow for Codex that treats "build this feature" as more than one big prompt. It clarifies what's actually being asked for, breaks it into small tasks with acceptance criteria, writes the failing test before any implementation, works each task in its own isolated Git worktree, and won't call something done without a security and correctness review plus real execution evidence.
+A structured software-delivery workflow for Codex that turns a large feature request into a deliberate engineering pipeline.
+
+It clarifies the request, defines smaller tasks and acceptance criteria, writes failing tests before implementation, isolates work using Git worktrees, reviews the result for correctness and security, and requires execution evidence before completion.
 
 <details>
-<summary>See the pipeline</summary>
+<summary><strong>View pipeline</strong></summary>
 
 ```mermaid
 flowchart LR
-    A[Idea] --> B[Discovery] --> C[Requirements + Tasks] --> D[Failing Test] --> E[Isolated Worktree] --> F[Implementation] --> G[Review] --> H[Verified Delivery]
+    A[Idea] --> B[Discovery]
+    B --> C[Requirements + Tasks]
+    C --> D[Failing Test]
+    D --> E[Isolated Worktree]
+    E --> F[Implementation]
+    F --> G[Review]
+    G --> H[Verified Delivery]
 ```
 
 </details>
 
 `Codex` `Python` `TDD` `Git Worktrees` `QA` `Security`
 
-*Repo:* [`Zaheer-verse/deliberate-dev-codex`](https://github.com/Zaheer-verse/deliberate-dev-codex)
+**Repository:** [Zaheer-verse/deliberate-dev-codex](https://github.com/Zaheer-verse/deliberate-dev-codex)
 
-### 🔁 Deliberate Dev · Claude Code
+---
 
-<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-claude-hero.svg" alt="Deliberate Dev Claude Code hero graphic" />
+### `06 / Deliberate Dev · Claude Code`
 
-<!-- Same idea again:
-<video src="PASTE_URL_HERE" controls width="100%"></video> -->
+<img width="100%" src="https://raw.githubusercontent.com/Zaheer-verse/zaheer-verse/main/app/public/deliberate-claude-hero.svg" alt="Deliberate Dev Claude Code hero graphic">
 
-The same discipline, rebuilt as a native Claude Code plugin: a main workflow coordinator, six specialized engineering skills, and namespaced commands that take a vague request through discovery, planning, isolated test-first implementation, review, and verification, with blockers reported explicitly instead of quietly skipped. Distributed through the GitHub Marketplace.
+A Claude Code plugin that applies the same structured engineering discipline through a coordinated workflow and specialized skills.
+
+It moves a task through discovery, planning, isolation, test-first implementation, review, integration, and verification while reporting blockers instead of silently skipping them.
 
 <details>
-<summary>See the workflow</summary>
+<summary><strong>View workflow</strong></summary>
 
 ```mermaid
 flowchart LR
-    A[Discover] --> B[Understand] --> C[Plan] --> D[Isolate] --> E[Test First] --> F[Implement] --> G[Review] --> H[Integrate] --> I[Verify]
+    A[Discover] --> B[Understand]
+    B --> C[Plan]
+    C --> D[Isolate]
+    D --> E[Test First]
+    E --> F[Implement]
+    F --> G[Review]
+    G --> H[Integrate]
+    H --> I[Verify]
 ```
 
 </details>
 
 `Claude Code` `AI Agents` `Python` `Git Worktrees` `TDD` `QA`
 
-*Repo:* [`Zaheer-verse/deliberate-dev-claude`](https://github.com/Zaheer-verse/deliberate-dev-claude)
+**Repository:** [Zaheer-verse/deliberate-dev-claude](https://github.com/Zaheer-verse/deliberate-dev-claude)
 
 ---
 
-## 📌 A few repos worth a look
-
-If you want to poke at the code directly, these are the ones I'd point you to first.
+## `REPOSITORY.INDEX`
 
 <div align="center">
 
-<a href="https://github.com/Zaheer-verse/deliberate-dev-codex"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=deliberate-dev-codex&theme=tokyonight&hide_border=true" alt="deliberate-dev-codex repo card" /></a>
-<a href="https://github.com/Zaheer-verse/deliberate-dev-claude"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=deliberate-dev-claude&theme=tokyonight&hide_border=true" alt="deliberate-dev-claude repo card" /></a>
-<a href="https://github.com/Zaheer-verse/DesignForge"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=DesignForge&theme=tokyonight&hide_border=true" alt="DesignForge repo card" /></a>
-<a href="https://github.com/Zaheer-verse/expense-management-system"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=expense-management-system&theme=tokyonight&hide_border=true" alt="expense-management-system repo card" /></a>
-<a href="https://github.com/Zaheer-verse/zaheer-verse"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=zaheer-verse&theme=tokyonight&hide_border=true" alt="zaheer-verse repo card" /></a>
-<a href="https://github.com/Zaheer-verse/Zam-zam-pizza"><img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=Zam-zam-pizza&theme=tokyonight&hide_border=true" alt="Zam-zam-pizza repo card" /></a>
+<a href="https://github.com/Zaheer-verse/deliberate-dev-codex">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=deliberate-dev-codex&theme=tokyonight&hide_border=true" alt="deliberate-dev-codex repository card">
+</a>
+
+<a href="https://github.com/Zaheer-verse/deliberate-dev-claude">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=deliberate-dev-claude&theme=tokyonight&hide_border=true" alt="deliberate-dev-claude repository card">
+</a>
+
+<a href="https://github.com/Zaheer-verse/DesignForge">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=DesignForge&theme=tokyonight&hide_border=true" alt="DesignForge repository card">
+</a>
+
+<a href="https://github.com/Zaheer-verse/expense-management-system">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=expense-management-system&theme=tokyonight&hide_border=true" alt="Expense Management System repository card">
+</a>
+
+<a href="https://github.com/Zaheer-verse/zaheer-verse">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=zaheer-verse&theme=tokyonight&hide_border=true" alt="Zaheer Verse repository card">
+</a>
+
+<a href="https://github.com/Zaheer-verse/Zam-zam-pizza">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/pin/?username=Zaheer-verse&repo=Zam-zam-pizza&theme=tokyonight&hide_border=true" alt="Zam Zam Pizza repository card">
+</a>
 
 </div>
 
 ---
 
-## 📊 GitHub activity
-
-The numbers, for what they're worth:
+## `GITHUB.ACTIVITY`
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Zaheer-verse&show_icons=true&hide_border=true&theme=tokyonight&include_all_commits=true&count_private=true" alt="Zaheer's GitHub stats" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Zaheer-verse&theme=tokyonight&hide_border=true" alt="Zaheer's GitHub streak" />
-
-<br/>
-
-<img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zaheer-verse&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Zaheer's most-used languages" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Zaheer-verse&show_icons=true&hide_border=true&theme=tokyonight&include_all_commits=true&count_private=true" alt="Zaheer GitHub statistics">
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Zaheer-verse&theme=tokyonight&hide_border=true" alt="Zaheer GitHub contribution streak">
 
 <br/><br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=Zaheer-verse&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" alt="GitHub trophies" />
+<img width="46%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zaheer-verse&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Zaheer most-used languages">
+
+<br/><br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=Zaheer-verse&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" alt="Zaheer GitHub trophies">
 
 </div>
 
-<details>
-<summary>🐍 Want the animated contribution snake too?</summary>
-<br/>
+---
 
- 
+## `LEARNING.LOG`
 
+Right now I’m continuing to strengthen the areas that connect naturally with my projects:
 
-</details>
+`Distributed Systems` · `Cloud Infrastructure` · `Cybersecurity` · `AI-Assisted Development` · `Embedded Systems`
+
+I also keep an eye on emerging areas such as blockchain when they connect to systems, infrastructure, or research problems I’m already exploring.
 
 ---
 
-## ✉️ Get in touch
+## `CONNECT`
 
-I'm always up for talking about AI developer tools, IoT and assistive tech, EV or energy research, or open source in general — if any of that overlaps with what you're building, I'd like to hear about it.
-
-The quickest way to reach me is by [email](mailto:zaheery991@gmail.com), or on [WhatsApp](https://wa.me/923335398292) if that's easier.
+```text
+> PORTFOLIO   zaheer-verse.vercel.app
+> GITHUB      github.com/Zaheer-verse
+> LINKEDIN    linkedin.com/in/zaheer-yousaf
+> EMAIL       zaheery991@gmail.com
+```
 
 <div align="center">
+
+<a href="https://zaheer-verse.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio">
+</a>
+<a href="https://github.com/Zaheer-verse">
+  <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</a>
+<a href="https://www.linkedin.com/in/zaheer-yousaf">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+<a href="mailto:zaheery991@gmail.com">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
+
+<br/><br/>
 
 *"Ideas become valuable when they survive the journey from imagination to implementation."*
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,50:1E3A8A,100:0B3D91&height=120&section=footer&animation=fadeIn" alt="" />
+---
+
+<div align="center">
+
+<sub>
+Computer Science · IoT · Web Engineering · AI Developer Tools · Energy Research
+</sub>
+
+</div>
+'''
+
+out = Path("/mnt/data/Zaheer-GitHub-README.md")
+out.write_text(readme, encoding="utf-8")
+print(f"Created: {out}")
+print(f"Lines: {len(readme.splitlines())}")
