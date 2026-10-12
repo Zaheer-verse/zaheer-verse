@@ -393,6 +393,84 @@ export const projects: ProjectItem[] = [
       conclusion: ['The same deliberate development process, packaged for the Claude Code workflow and ready to explore from GitHub.'],
     },
   },
+  {
+    slug: 'aosser',
+    title: 'Aosser',
+    description: 'Private, in-browser file compression for lighter sharing',
+    longDescription:
+      'A privacy-first web compressor for images, videos, PDFs, and Word files. Files stay on your device while you create lighter downloads or a ZIP bundle.',
+    tags: ['React', 'TypeScript', 'Compression', 'Privacy'],
+    gradient: 'from-teal-500 to-emerald-600',
+    externalUrl: 'https://aosser.vercel.app/',
+    githubUrl: 'https://github.com/Zaheer-verse/aosser',
+    detail: {
+      subtitle: 'Private File Compression in the Browser',
+      intro: [
+        'Aosser makes everyday files easier to share without sending them to a server.',
+        'Compression runs in the browser, so the original files remain on the user’s device and the lighter results are ready to download.',
+      ],
+      objectives: [
+        {
+          label: 'Problem',
+          value: 'Large images, videos, and documents are difficult to send and store.',
+        },
+        {
+          label: 'Approach',
+          value: 'Process supported files locally with a clear choice between balanced quality and stronger size reduction.',
+        },
+        {
+          label: 'Privacy',
+          value: 'Files are handled on-device and are never uploaded by the application.',
+        },
+      ],
+      keyFeatures: [
+        'Drag-and-drop and device file selection',
+        'Balanced and strong compression modes',
+        'Image, video, PDF, and DOCX support',
+        'Before-and-after file size feedback',
+        'Individual downloads and ZIP export',
+        'Responsive interface for desktop and mobile',
+      ],
+      software: [
+        'React and TypeScript',
+        'Vite and Tailwind CSS',
+        'Browser-native file and download APIs',
+        'Client-side compression utilities',
+      ],
+      architecture: [
+        'A focused workspace owns file selection, compression state, and result actions',
+        'Format-specific modules handle image, video, PDF, and DOCX processing',
+        'The download layer creates individual files or a ZIP without a server upload',
+      ],
+      flowProcess: [
+        'Choose files from the device',
+        'Select a compression balance',
+        'Compress locally in the browser',
+        'Review the lighter results',
+        'Download files individually or as a ZIP',
+      ],
+      deliverables: [
+        'Production web application',
+        'Public GitHub repository',
+        'Vercel production deployment',
+        'Security and usage documentation',
+      ],
+      limitations: [
+        'Results depend on the original file format and how much it is already optimized.',
+        'Large videos can take longer and require browser codec support.',
+        'Some PDF compression may flatten pages, so originals should be kept for editing workflows.',
+      ],
+      checklist: [
+        'Open the live Aosser workspace',
+        'Add one file or a group of files',
+        'Choose Balanced or Strong compression',
+        'Download the processed file or ZIP',
+      ],
+      conclusion: [
+        'Aosser keeps compression simple, private, and close to the user’s files.',
+      ],
+    },
+  },
 ];
 
 export const findProject = (slug: string) =>
