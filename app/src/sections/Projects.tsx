@@ -1,6 +1,6 @@
 import { type ElementType } from 'react';
 import { motion, useInView, type Variants } from 'framer-motion';
-import { ExternalLink, Cpu, Zap, ArrowRight, Wallet, Github, Palette, Terminal, GitBranch } from 'lucide-react';
+import { ExternalLink, Cpu, Zap, ArrowRight, Wallet, Github, Palette, Terminal, GitBranch, Archive } from 'lucide-react';
 import { projects } from '../data/projects';
 import Reveal from '../components/Reveal';
 import { useScrollDepth } from '../hooks/use-scroll-depth';
@@ -20,6 +20,7 @@ const Projects = () => {
     'designforge': Palette,
     'deliberate-dev-codex': Terminal,
     'deliberate-dev-claude': GitBranch,
+    'aosser': Archive,
   };
 
   const containerVariants: Variants = {
